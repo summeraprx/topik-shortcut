@@ -81,6 +81,10 @@ def load_lines(booklet, start=None, stop=None):
     lines.sort(key=lambda l: (l["page"], l["y"], l["x"]))
     first = next(i for i, l in enumerate(lines)
                  if (re.search(start, l["text"]) if start else INSTRUCTION.match(l["text"])))
+    # Start at the beginning of that line's ROW: other pieces of the same row can sort just before it
+    while first > 0 and lines[first - 1]["page"] == lines[first]["page"] \
+            and abs(lines[first - 1]["y"] - lines[first]["y"]) < ROW_TOLERANCE:
+        first -= 1
     last = next((i for i, l in enumerate(lines) if stop and i > first and re.search(stop, l["text"])),
                 len(lines))
     return lines[first:last]
