@@ -52,6 +52,7 @@ class Question(BaseModel):
     corrected: list[str] = []     # fields replaced from data/corrections/<round>.json
     regions: list[tuple[int, float, float]] = []   # (page, y_top, y_bottom) where it is printed
     instruction_region: tuple[int, float, float] | None = None   # where the ※ instruction line is
+    passage_withheld: bool = False   # official PDF says the passage is not disclosed (copyright)
 
 
 def find_booklet(rnd, section):
@@ -145,12 +146,16 @@ def is_mid_word(left, right):
     return True
 
 
-def join_lines(prev, new, prev_right):
+PARAGRAPH_X = 0.207   # continuing lines start at x ≈ 0.197, indented paragraph starts at ≈ 0.216
+LIST_START = re.compile(r"^(\([가-하]\)|[•◦▪■□○●※《〈<✓])")   # (가) (나) …, bullets, notices
+
+
+def join_lines(prev, new, prev_right, new_x=0.0):
     """Add a printed line to text. Exam text wraps lines in the middle of words
     ('이루어 / 진다'), so wrapped lines are joined with or without a space by is_mid_word()."""
     if not prev:
         return new
-    if prev_right < WRAP_EDGE:
+    if prev_right < WRAP_EDGE or new_x > PARAGRAPH_X or LIST_START.match(new):
         return prev + "\n" + new
     words = new.split()
     left, right = prev.split()[-1], words[0]
@@ -207,6 +212,12 @@ def structure(rnd, section, first_q, last_q):
             pending = []      # instruction itself is not part of the crop
             continue
 
+        # 1b) "(각 2점)" wrapped onto its own row right after the instruction
+        if instruction and q is None and not passage and re.fullmatch(r"\(각\s*\d+\s*점\)", text):
+            instruction = f"{instruction} {text}"
+            points = int(POINTS.search(text).group(1))
+            continue
+
         # 2) Question number starts a new question
         m = QUESTION_NO.match(head["text"])
         # A misread letter (e.g. "y." for 7 or 9) is accepted as the expected next number
@@ -250,14 +261,14 @@ def structure(rnd, section, first_q, last_q):
 
         # 4) Plain text: question text if inside a question (before choices), else shared passage
         if q is not None and not q.choices:
-            q.text = join_lines(q.text, text, prev_right)
+            q.text = join_lines(q.text, text, prev_right, head["x"])
             q.regions.append(span)
         elif q is not None and q.choices:
             passage = [text]          # text after a finished question = next passage
             pending = [span]
             q = None
         else:
-            passage = [join_lines("\n".join(passage), text, prev_right)]
+            passage = [join_lines("\n".join(passage), text, prev_right, head["x"])]
             pending.append(span)
 
     for q in questions:
@@ -265,6 +276,7 @@ def structure(rnd, section, first_q, last_q):
             q.section = "writing"
         fix_choices(q)
         q.regions = merge_regions(q.regions)
+        q.passage_withheld = "지문은 공개하지 않습니다" in q.shared_passage + q.text
     return questions
 
 

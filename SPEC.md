@@ -139,7 +139,12 @@ From official topik.go.kr board (TWSTDY0100), saved in `data/raw/` (never in Git
 | | | ⏸ Later, "0 flags but not proven" (some digits named from font templates): 52, 47 Reading |
 | | | ⏸ Later, not reliable: 35, 36 Listening, 37, 47 Listening, 64 Reading |
 | | | ⏸ Later, page failed (question numbers not found): 36 Reading, 41 Listening, 41 Reading. Fix by: Claude reads image / owner types / improve script |
-| Structure questions | `pipeline/structure.py` | 🚧 In progress: rounds 102, 96, 91 |
+| Structure questions | `pipeline/structure.py` | ✅ Rounds 102, 96, 91: 150/150 Reading + 12/12 Writing found. Human fixes in `data/corrections/` |
+| Gold set + evaluation | `pipeline/review_page.py`, `eval/eval_extraction.py` | ✅ Round 102 reviewed by owner (131 fields). Before fixes: 89.3% exact, CER 0.72%. After fixes: 95.4% exact, CER 0.62% (development set, so optimistic) |
+
+Known data facts:
+- **Passages withheld for copyright** in the official PDFs ("저작권 관련 법령에 따라 본 문항의 지문은 공개하지 않습니다"): Q42–43 in rounds 102, 96, 91; Q23–24 in round 102. Flagged as `passage_withheld`; analysis skips the notice text.
+- Remaining errors on the gold set are real OCR misreads (`²`, `《`, a missing `.`) and charts/images (Q10 graph, Q53 chart, Q51 email screenshot).
 
 Answer key method: locate cells by position → OCR each cell (also with circle ring erased) →
 k-means clusters of symbol shapes → name clusters by OCR votes → flag disagreements / low similarity →
@@ -147,7 +152,9 @@ audit sheet image for human check.
 
 ## 12. Open items
 
-- Which 2–3 rounds to process first (newest rounds recommended)
+- Later (if time): round 96 as held-out **test set** for an honest accuracy number
+- Later (if time): `eval_extraction.py` option to evaluate the current pipeline output (not the review-time snapshot)
+- Later: describe Q53 / Q10 charts from page images
 - Grammar patterns: auto-mined from data + labeled by Claude → owner reviews list
 - Owner's tips and Writing core ideas (owner provides)
 - Ollama chat model choice (test 2 small models on Day 2)
