@@ -1,0 +1,14 @@
+# Exam content (copyright NIIED and original authors) — never commit
+data/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
