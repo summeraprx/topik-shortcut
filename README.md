@@ -52,6 +52,19 @@ Evaluated by injecting known errors into the **official model answers** (rounds 
 
 **Caveat:** the spacing rules were tuned on these same answers, so 64/64 is a development score.
 
+## Run it locally
+
+Needs Python 3 (`.venv`), Node.js, and [Ollama](https://ollama.com) with `bge-m3` and `gemma4:e2b-it-qat`.
+Exam data is not in the repo: download the PDFs and run the pipeline first (see `pipeline/`).
+
+```bash
+.venv/bin/python -m pipeline.export_web                              # data for the website -> data/web/
+.venv/bin/uvicorn api.main:app --host 127.0.0.1 --port 8000          # Ask TOPIK + Writing checker API
+cd web && npm run dev                                                # website: http://127.0.0.1:3000/ko
+```
+
+Website: Next.js 16 (App Router, cache components), TypeScript, Tailwind; pages in Korean / English / Thai (`/ko`, `/en`, `/th`).
+
 ## Data
 
 Exam PDFs are downloaded from the official TOPIK site (topik.go.kr) and are **not** included in this repository. Copyright belongs to 국립국제교육원 (NIIED) and the original authors of the passages.
