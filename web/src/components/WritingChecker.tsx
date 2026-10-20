@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { API, API_START, cells, post } from "@/lib/api";
+import { API_START, cells, get, post } from "@/lib/api";
 import { t, type Key, type Lang } from "@/lib/i18n";
 
 type Prompt = { round: number; number: number; instruction: string; text: string; limits: [number, number] | null };
@@ -22,7 +22,7 @@ export default function WritingChecker({ lang }: { lang: Lang }) {
   const [result, setResult] = useState<Result | null>(null);
 
   useEffect(() => {
-    fetch(`${API}/writing/prompts`).then((r) => r.json()).then(setPrompts).catch(() => setDown(true));
+    get<Prompt[]>("/writing/prompts").then(setPrompts).catch(() => setDown(true));
   }, []);
 
   const [round, number] = pick.split("-").map(Number);

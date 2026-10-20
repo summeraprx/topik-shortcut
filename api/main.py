@@ -5,10 +5,11 @@ Docs: http://localhost:8000/docs   (FastAPI generates them from the Pydantic mod
 
 Only the local website may call it (CORS), and it listens on this Mac only (127.0.0.1).
 """
-import json
+import os
+import secrets
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import Depends, FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -21,9 +22,19 @@ from writing.rules import LENGTH, cells
 ROOT = Path(__file__).resolve().parent.parent
 ROUNDS = (102, 96, 91)
 
-app = FastAPI(title="TOPIK Shortcut API")
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"], allow_methods=["GET", "POST"],
-                   allow_headers=["Content-Type"])
+# Phone mode (scripts/phone_mode.sh): reachable on the Wi-Fi, so every call needs the secret key.
+PHONE_KEY = os.environ.get("PHONE_KEY")
+ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"] + ([os.environ["EXTRA_ORIGIN"]] if os.environ.get("EXTRA_ORIGIN") else [])
+
+
+def require_key(x_key: str | None = Header(default=None)):
+    if PHONE_KEY and not (x_key and secrets.compare_digest(x_key, PHONE_KEY)):
+        raise HTTPException(401, "missing or wrong key")
+
+
+app = FastAPI(title="TOPIK Shortcut API", dependencies=[Depends(require_key)])
+app.add_middleware(CORSMiddleware, allow_origins=ORIGINS, allow_methods=["GET", "POST"],
+                   allow_headers=["Content-Type", "X-Key"])
 searcher = Searcher()          # load the index once, not on every question
 
 

@@ -63,6 +63,8 @@ Exam data is not in the repo: download the PDFs and run the pipeline first (see 
 cd web && npm run dev                                                # website: http://127.0.0.1:3000/ko
 ```
 
+**Phone mode** (test on a phone over Wi-Fi): stop the normal servers, then run `./scripts/phone_mode.sh`. It prints a link with a random secret key; without that key, both the website and the API answer 401 (safe on shared Wi-Fi). Ctrl+C stops everything.
+
 Website: Next.js 16 (App Router, cache components), TypeScript, Tailwind; pages in Korean / English / Thai (`/ko`, `/en`, `/th`).
 
 ## Data
