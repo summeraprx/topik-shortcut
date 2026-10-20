@@ -14,6 +14,13 @@ CANDIDATES = ROOT / "data" / "processed" / "analysis" / "grammar_candidates.json
 LABELS = ROOT / "content" / "grammar" / "grammar_labels.json"
 DETAILS = sorted((ROOT / "content" / "grammar").glob("grammar_details_*.json"))
 RULE_MARK = {"ok": "✓", "no": "✗", "note": "•"}
+EXAM_NOTE = {"en": "(paired in the exam: round {} Q{})", "th": "(เคยออกข้อสอบเป็นคู่กัน: ครั้งที่ {} ข้อ {})"}
+
+
+def exam_parts(exam):
+    """'round 96 Q3' -> ('96', '3')"""
+    rnd, q = re.match(r"round (\d+) Q(\d+)", exam).groups()
+    return rnd, q
 OUT = ROOT / "data" / "review" / "grammar_review.html"
 GRAMMAR_QUESTIONS = re.compile(r"^\d+-reading-[1-4]$")   # Reading Q1–4 test grammar directly
 SHOW_FIRST = 5   # examples visible before "Show all"
@@ -35,7 +42,8 @@ def build():
     def text_blocks(d, lang):
         """Form / rules / similar as editable text, one item per line."""
         rules = "\n".join(f"{RULE_MARK[r['t']]} {r[lang]}" for r in d.get("rules", []))
-        similar = "\n".join(f"≈ {s['g']}" for s in d.get("similar", []))     # names only (owner's style)
+        similar = "\n".join(f"≈ {s['g']}" + (f" {EXAM_NOTE[lang].format(*exam_parts(s['exam']))}" if s.get("exam") else "")
+                             for s in d.get("similar", []))     # names only (owner's style) + exam pair
         return {f"form_{lang}": d.get("form", {}).get(lang, ""), f"rules_{lang}": rules, f"similar_{lang}": similar,
                 f"note_{lang}": d.get("note", {}).get(lang, "")}
 
@@ -155,7 +163,7 @@ button.more { margin-top: 6px; font-size: 13px; padding: 3px 10px; }
   <input type="file" id="file" accept=".json" hidden>
 </header>
 <main>
-  <p class="help">For each grammar point: check the <b>grammar</b>, its <b>meaning</b>, <b>form</b> (how to attach -는/(으)ㄴ/(으)ㄹ), <b>rules</b> (✓ do · ✗ don't · • note) <b>similar</b> grammar and the <b>note</b> (how the similar grammar differs), in English and Thai, against the real examples. ⭐ = the exam itself paired them in Q3–4.
+  <p class="help">For each grammar point: check the <b>grammar</b>, its <b>meaning</b>, <b>form</b> (how to attach -는/(으)ㄴ/(으)ㄹ), <b>rules</b> (✓ do · ✗ don't · • note) <b>similar</b> grammar and the <b>note</b> (how the similar grammar differs), in English and Thai, against the real examples.
   ✅ = correct. Editing any box marks it ✏️ (your version is saved). ❌ = not useful for learners (drop it).
   The note box is optional (e.g. "merge with -는 바람에").</p>
   <div id="tested"></div>
@@ -220,7 +228,6 @@ function render(g) {
   const top = document.createElement("div"); top.className = "top";
   const left = document.createElement("div");
   left.innerHTML = (g.tested.length ? `<span class="badge test">In Q1–4: ${g.tested.map(q => q.replace("-reading-", " Q")).join(", ")}</span>` : "")
-    + (g.exam_pair ? `<span class="badge test">⭐ exam pair</span>` : "")
     + `<span class="badge">${g.count}× in ${g.rounds.length} round${g.rounds.length > 1 ? "s" : ""}</span>`;
   const st = document.createElement("div"); st.className = "state";
   top.append(left, st); card.appendChild(top);
