@@ -32,7 +32,7 @@ def run(rnd, number, answer, use_ai=True):
         if use_ai:
             from writing.ai import find_errors
             # guard: the model sometimes "corrects" into -ㅂ/습니다 / -요, which the TOPIK rules forbid in 53/54
-            issues += [i for i in find_errors(answer)[0] if not re.search(r"(니다|요)\.?$", i["correction"])]
+            issues += [i for i in find_errors(answer)[0] if not re.search(r"([습합됩입]니다|요)\.?$", i["correction"])]
     return issues
 
 
