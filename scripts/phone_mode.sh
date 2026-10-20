@@ -3,6 +3,7 @@
 # Use it only while testing, then press Ctrl+C. Stop the normal servers first.
 set -euo pipefail
 cd "$(dirname "$0")/.."
+export NEXT_TELEMETRY_DISABLED=1
 
 IP=$(ipconfig getifaddr en0 || true)
 [ -z "$IP" ] && { echo "No Wi-Fi address found (en0)."; exit 1; }
