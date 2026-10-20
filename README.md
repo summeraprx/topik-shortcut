@@ -18,6 +18,26 @@ Analysis of real past TOPIK II exams (vocabulary and grammar frequency, question
 
 Measured with `eval/eval_extraction.py`.
 
+### Ask TOPIK (RAG)
+
+Questions in Korean, English or Thai are answered **only from past exams and our grammar cards**, with a citation for every fact (`[96-reading-3]`, `[grammar:-는 바람에]`). Runs fully on a laptop: bge-m3 embeddings + `gemma4:e2b` via Ollama.
+
+**Retrieval** — 1,070 test queries generated from our own data (KO/EN/TH), hit@5 / MRR:
+
+| Search | grammar meaning | usage in exams* | difference | paraphrase | pasted exam sentence | **all** |
+|---|---|---|---|---|---|---|
+| keyword (BM25 on Kiwi morphemes) | 89.1% | 78.6% | 78.8% | 49.5% | **100%** | 78.6% / 0.76 |
+| meaning (bge-m3 vectors) | 99.3% | 95.2% | 100% | 100% | 98.3% | 98.3% / 0.97 |
+| hybrid (RRF, equal weight) | 98.0% | 86.7% | 91.5% | 100% | 100% | 94.5% / 0.92 |
+| **router + grammar-name match** | **100%** | **100%** | **100%** | **100%** | 98.3% | **99.8% / 0.99** |
+
+\* usage = top 5 + exam questions linked from the retrieved grammar card.
+
+Findings: plain hybrid search was *worse* than vector search for grammar questions (shared morphemes add noise), but keyword search wins for pasted exam sentences — so a simple query router picks the right search per query.
+**Caveat:** test queries are generated from templates and contain exact grammar names, so these numbers are optimistic; real user questions are harder.
+
+**Answers** (12 real answers, local model): 21 citations, **0 invalid**; 11/12 in the question's language; 1 honest "not found"; median 16 s on an 8 GB MacBook.
+
 ## Data
 
 Exam PDFs are downloaded from the official TOPIK site (topik.go.kr) and are **not** included in this repository. Copyright belongs to 국립국제교육원 (NIIED) and the original authors of the passages.
