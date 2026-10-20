@@ -38,6 +38,20 @@ Findings: plain hybrid search was *worse* than vector search for grammar questio
 
 **Answers** (12 real answers, local model): 21 citations, **0 invalid**; 11/12 in the question's language; 1 honest "not found"; median 16 s on an 8 GB MacBook.
 
+### Writing checker (Q51–54)
+
+Three layers: **official rules** from the TOPIK guides (length in 원고지 characters, no -ㅂ/습니다/-요 endings in 53–54, no title, no copying the question, one sentence for 51–52, matching formality…), **language** (clear spacing errors with Kiwi, spoken expressions), and **AI** (spelling/grammar with a local model, shown as *possible* errors). Feedback in English and Thai.
+
+Evaluated by injecting known errors into the **official model answers** (rounds 102, 96, 91):
+
+| Layer | Result |
+|---|---|
+| Length counter | matches the official counts exactly (300, 288; 279 vs 280) |
+| Rules + language | **64 / 64** injected errors caught (12 types), **0 false alarms** on the 12 clean official answers |
+| AI (gemma4:e2b) | typos found **5 / 6**, **0** errors invented on clean essays; corrections right only **3 / 5** → shown as "possible error here", and corrections that break TOPIK rules are dropped |
+
+**Caveat:** the spacing rules were tuned on these same answers, so 64/64 is a development score.
+
 ## Data
 
 Exam PDFs are downloaded from the official TOPIK site (topik.go.kr) and are **not** included in this repository. Copyright belongs to 국립국제교육원 (NIIED) and the original authors of the passages.

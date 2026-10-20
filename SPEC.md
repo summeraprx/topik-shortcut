@@ -140,6 +140,7 @@ From official topik.go.kr board (TWSTDY0100), saved in `data/raw/` (never in Git
 | | | ⏸ Later, not reliable: 35, 36 Listening, 37, 47 Listening, 64 Reading |
 | | | ⏸ Later, page failed (question numbers not found): 36 Reading, 41 Listening, 41 Reading. Fix by: Claude reads image / owner types / improve script |
 | Ask TOPIK (RAG) | `rag/`, `eval/eval_rag.py` | ✅ Local: 260 chunks (162 questions + 98 grammar cards), bge-m3 + gemma4:e2b via Ollama. Router + name match: 99.8% hit@5 on 1,070 generated queries; answers: 0 invalid citations / 21. Index is a local file (`data/rag/`); Supabase pgvector later |
+| Writing checker | `writing/`, `eval/eval_writing.py` | ✅ Q51–54, 3 layers (rules / language / AI), EN+TH feedback. Rules+language 64/64 injected errors, 0 false alarms on official answers; AI typos 5/6, fixes 3/5 |
 | Structure questions | `pipeline/structure.py` | ✅ Rounds 102, 96, 91: 150/150 Reading + 12/12 Writing found. Human fixes in `data/corrections/` |
 | Gold set + evaluation | `pipeline/review_page.py`, `eval/eval_extraction.py` | ✅ Round 102 reviewed by owner (131 fields). Before fixes: 89.3% exact, CER 0.72%. After fixes: 95.4% exact, CER 0.62% (development set, so optimistic) |
 
