@@ -35,8 +35,10 @@ CONTENT = {"NNG", "NNP", "VV", "VA", "MAG", "XR"}        # words learners study
 VERB_SUFFIX = {"XSV", "XSA"}                               # 예상+하다, 따뜻+하다
 GRAMMAR_START = {"ETM", "ETN", "EC"}                       # patterns start at an ending
 GRAMMAR_PIECE = ("J", "E", "NNB", "VX", "VCP", "VCN", "XSV", "XSA")
-GRAMMAR_NOUNS = {"덕분", "때문", "탓", "대신", "바람", "반면", "가능성"}      # grammar nouns Kiwi tags NNG
-GRAMMAR_VERBS = {"있", "없", "하", "되", "않", "말", "보", "알", "모르"}       # verbs inside patterns (수 있다, -야 하다)
+GRAMMAR_NOUNS = {"덕분", "때문", "탓", "대신", "바람", "반면", "가능성", "마찬가지", "동안"}  # grammar nouns Kiwi tags NNG
+GRAMMAR_VERBS = {"있", "없", "하", "되", "않", "말", "보", "알", "모르", "위하", "무섭", "어렵"}  # verbs inside patterns
+GRAMMAR_ADVERBS = {"같이"}                                                     # -는 것과 같이
+GRAMMAR_QUESTIONS = re.compile(r"^\d+-reading-[1-4]$")   # Reading Q1–4 test grammar directly: keep every pattern
 TRAILING = ("EP", "EF", "EC", "ETM", "JKS", "JKO", "JX", "JKG")              # pieces that belong to what comes next
 ALLOMORPH = {"ᆯ": "(으)ㄹ", "을": "(으)ㄹ", "ᆫ": "(으)ㄴ", "은": "(으)ㄴ", "ᆷ": "(으)ㅁ", "음": "(으)ㅁ"}
 BOILERPLATE_MIN = 3     # a sentence repeated in this many questions is a question stem, not content
@@ -100,7 +102,8 @@ def lemmas(tokens):
 def is_grammar_piece(token):
     tag = base_tag(token.tag)
     return (tag.startswith(GRAMMAR_PIECE) or (tag == "NNG" and token.form in GRAMMAR_NOUNS)
-            or (tag in ("VV", "VA") and token.form in GRAMMAR_VERBS))
+            or (tag in ("VV", "VA") and token.form in GRAMMAR_VERBS)
+            or (tag == "MAG" and token.form in GRAMMAR_ADVERBS))
 
 
 def grammar_sequences(tokens):
@@ -219,7 +222,7 @@ def to_json(table, kind):
         if kind == "vocab":
             row = {"lemma": key, "pos": sorted(v["pos"]), **row, "where": dict(v["where"])}
         else:
-            row = {"pattern": key, **row}
+            row = {"pattern": key, **row, "questions": sorted(v["questions"])}
         rows.append(row)
     return sorted(rows, key=lambda r: (-len(r["rounds"]), -r["count"]))
 
@@ -230,7 +233,8 @@ def main(rounds):
         questions += json.loads((PROCESSED / f"questions_{rnd}.json").read_text())
 
     vocab, grammar, total_tokens, stems = analyse(questions)
-    grammar = {k: g for k, g in grammar.items() if g["count"] >= MIN_COUNT}
+    grammar = {k: g for k, g in grammar.items()
+               if g["count"] >= MIN_COUNT or any(GRAMMAR_QUESTIONS.match(q) for q in g["questions"])}
     grammar = drop_subsumed(grammar)
 
     OUT.mkdir(parents=True, exist_ok=True)

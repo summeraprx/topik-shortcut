@@ -1,0 +1,836 @@
+{
+ "version": 2,
+ "labelled_by": "Claude (to be reviewed by owner)",
+ "groups": [
+  {
+   "name": "-고 있다",
+   "en": "be ~ing (ongoing action or state)",
+   "th": "กำลัง...อยู่ (การกระทำที่ยังดำเนินอยู่)",
+   "members": [
+    "고/EC 있/VX"
+   ]
+  },
+  {
+   "name": "-아/어서",
+   "en": "because; and then (sequence)",
+   "th": "เพราะ... / ...แล้วจึง... (ลำดับเหตุการณ์)",
+   "members": [
+    "어서/EC"
+   ]
+  },
+  {
+   "name": "-(으)ㄹ 수 있다/없다",
+   "en": "can / cannot",
+   "th": "สามารถ... / ไม่สามารถ...",
+   "members": [
+    "(으)ㄹ/ETM 수/NNB 있/VA",
+    "(으)ㄹ/ETM 수/NNB 있/VV",
+    "(으)ㄹ/ETM 수/NNB 없/VA"
+   ]
+  },
+  {
+   "name": "-(으)ㄹ 수도 있다",
+   "en": "might, could possibly",
+   "th": "อาจจะ... (ความเป็นไปได้)",
+   "members": [
+    "(으)ㄹ/ETM 수/NNB 도/JX 있/VA"
+   ]
+  },
+  {
+   "name": "-(으)ㄹ 수밖에 없다",
+   "en": "have no choice but to",
+   "th": "ไม่มีทางเลือกอื่นนอกจาก...",
+   "members": [
+    "(으)ㄹ/ETM 수/NNB 밖에/JX 없/VA"
+   ]
+  },
+  {
+   "name": "-아/어야 하다",
+   "en": "must, have to",
+   "th": "ต้อง...",
+   "members": [
+    "어야/EC 하/VX"
+   ]
+  },
+  {
+   "name": "-는/(으)ㄴ/(으)ㄹ 것",
+   "en": "turns a verb into a noun: 'the thing that / the fact of ~ing'",
+   "th": "ทำให้กริยาเป็นคำนาม: 'สิ่งที่... / การ...'",
+   "members": [
+    "는/ETM 것/NNB",
+    "(으)ㄴ/ETM 것/NNB",
+    "(으)ㄹ/ETM 것/NNB",
+    "는/ETM 것/NNB 에/JKB"
+   ]
+  },
+  {
+   "name": "-는/(으)ㄴ 것이다",
+   "en": "explaining: 'it is that ~ / that is because ~'",
+   "th": "อธิบายเหตุผล: '...นั่นเอง / ที่เป็นเช่นนั้นก็เพราะ...'",
+   "members": [
+    "는/ETM 것/NNB 이/VCP",
+    "(으)ㄴ/ETM 것/NNB 이/VCP"
+   ]
+  },
+  {
+   "name": "-(으)ㄹ 것이다",
+   "en": "will; probably (prediction)",
+   "th": "จะ... / คงจะ... (คาดการณ์)",
+   "members": [
+    "(으)ㄹ/ETM 것/NNB 이/VCP",
+    "(으)ㄹ/ETM 거/NNB 이/VCP"
+   ]
+  },
+  {
+   "name": "-는/(으)ㄴ/(으)ㄹ 것으로 (보이다/여겨지다)",
+   "en": "is seen / considered / expected to be ~ (formal reporting)",
+   "th": "ถูกมองว่า... / คาดว่า... (สำนวนทางการ)",
+   "members": [
+    "는/ETM 것/NNB 으로/JKB",
+    "(으)ㄴ/ETM 것/NNB 으로/JKB",
+    "(으)ㄹ/ETM 것/NNB 으로/JKB"
+   ]
+  },
+  {
+   "name": "-는 것처럼",
+   "en": "as if, like",
+   "th": "ราวกับว่า... / เหมือนกับ...",
+   "members": [
+    "는/ETM 것/NNB 처럼/JKB"
+   ]
+  },
+  {
+   "name": "-다는 것",
+   "en": "the fact that ~",
+   "th": "ข้อเท็จจริงที่ว่า...",
+   "members": [
+    "다는/ETM 것/NNB",
+    "ᆫ다는/ETM 것/NNB"
+   ]
+  },
+  {
+   "name": "-지 않다",
+   "en": "not (negation)",
+   "th": "ไม่... (ปฏิเสธ)",
+   "members": [
+    "지/EC 않/VX"
+   ]
+  },
+  {
+   "name": "-지 못하다",
+   "en": "cannot, be unable to",
+   "th": "...ไม่ได้ (ทำไม่ได้)",
+   "members": [
+    "지/EC 못하/VX"
+   ]
+  },
+  {
+   "name": "-지 말다",
+   "en": "do not (prohibition)",
+   "th": "อย่า... (ห้าม)",
+   "members": [
+    "지/EC 말/VX"
+   ]
+  },
+  {
+   "name": "-(으)면",
+   "en": "if, when",
+   "th": "ถ้า... / เมื่อ...",
+   "members": [
+    "(으)면/EC"
+   ]
+  },
+  {
+   "name": "-(으)면 되다",
+   "en": "just need to; it is enough to",
+   "th": "แค่...ก็พอ",
+   "members": [
+    "(으)면/EC 되/VV"
+   ]
+  },
+  {
+   "name": "-아/어도",
+   "en": "even if",
+   "th": "ถึงแม้ว่า...ก็",
+   "members": [
+    "어도/EC"
+   ]
+  },
+  {
+   "name": "-아/어도 되다",
+   "en": "may; it is okay to",
+   "th": "...ก็ได้ (อนุญาต)",
+   "members": [
+    "어도/EC 되/VV"
+   ]
+  },
+  {
+   "name": "-아/어지다",
+   "en": "become; get ~ed (change or passive)",
+   "th": "กลายเป็น... / ถูกทำให้... (การเปลี่ยนแปลง/ถูกกระทำ)",
+   "members": [
+    "어/EC 지/VX"
+   ]
+  },
+  {
+   "name": "-아/어 있다",
+   "en": "state that remains after an action",
+   "th": "อยู่ในสภาพ... (ผลของการกระทำยังคงอยู่)",
+   "members": [
+    "어/EC 있/VX"
+   ]
+  },
+  {
+   "name": "-게 되다",
+   "en": "come to, end up (change of situation)",
+   "th": "ได้... / กลายเป็นว่า... (สถานการณ์เปลี่ยนไป)",
+   "members": [
+    "게/EC 되/VV"
+   ]
+  },
+  {
+   "name": "-게 하다",
+   "en": "make / let (someone) do; make (it) ~",
+   "th": "ทำให้... / ให้(ใคร)ทำ...",
+   "members": [
+    "게/EC 하/VX",
+    "게/EC 하/VV"
+   ]
+  },
+  {
+   "name": "-(으)면서",
+   "en": "while (two actions at once); as",
+   "th": "ในขณะที่... / พร้อมกับ...",
+   "members": [
+    "(으)면서/EC"
+   ]
+  },
+  {
+   "name": "-아/어 주다",
+   "en": "do something for someone",
+   "th": "...ให้ (ทำให้ผู้อื่น)",
+   "members": [
+    "어/EC 주/VX"
+   ]
+  },
+  {
+   "name": "-아/어다 주다",
+   "en": "take / bring and do for someone (with movement)",
+   "th": "...ไปให้ / ...มาให้ (เช่น พาไปส่ง)",
+   "members": [
+    "어다/EC 주/VX"
+   ]
+  },
+  {
+   "name": "-도록",
+   "en": "so that; to the point that",
+   "th": "เพื่อให้... / จน...",
+   "members": [
+    "도록/EC"
+   ]
+  },
+  {
+   "name": "-도록 하다",
+   "en": "make sure to; have (someone) do",
+   "th": "ให้...(ทำ) / ทำให้...",
+   "members": [
+    "도록/EC 하/VX"
+   ]
+  },
+  {
+   "name": "-(으)려고",
+   "en": "in order to",
+   "th": "เพื่อจะ...",
+   "members": [
+    "(으)려고/EC"
+   ]
+  },
+  {
+   "name": "-(으)려고 하다",
+   "en": "intend to; be about to",
+   "th": "ตั้งใจจะ... / กำลังจะ...",
+   "members": [
+    "(으)려고/EC 하/VX",
+    "려/EC 하/VX"
+   ]
+  },
+  {
+   "name": "-(으)며",
+   "en": "and (formal, listing); while",
+   "th": "และ... (ภาษาเขียน) / ขณะที่...",
+   "members": [
+    "(으)며/EC"
+   ]
+  },
+  {
+   "name": "-다고 (하다)",
+   "en": "indirect quote: say / think that ~",
+   "th": "(พูด/คิด)ว่า... (การอ้างคำพูดทางอ้อม)",
+   "members": [
+    "다고/EC",
+    "ᆫ다고/EC",
+    "다고/EC 하/VV"
+   ]
+  },
+  {
+   "name": "-다고 보다",
+   "en": "consider / view that ~",
+   "th": "มองว่า... / เห็นว่า...",
+   "members": [
+    "다고/EC 보/VV"
+   ]
+  },
+  {
+   "name": "-(이)라고",
+   "en": "quoting a noun or statement: 'called ~ / that ~'",
+   "th": "ว่า... (อ้างอิงคำนามหรือคำพูด)",
+   "members": [
+    "라고/EC"
+   ]
+  },
+  {
+   "name": "-는 데",
+   "en": "in / for (doing)",
+   "th": "ในการ...",
+   "members": [
+    "는/ETM 데/NNB"
+   ]
+  },
+  {
+   "name": "-지만",
+   "en": "but",
+   "th": "แต่...",
+   "members": [
+    "지만/EC"
+   ]
+  },
+  {
+   "name": "-기 때문에 / -기 때문이다",
+   "en": "because",
+   "th": "เพราะ... / เป็นเพราะ...",
+   "members": [
+    "기/ETN 때문/NNB 이/VCP",
+    "기/ETN 때문/NNB 에/JKB"
+   ]
+  },
+  {
+   "name": "-(으)려면",
+   "en": "if you want to",
+   "th": "ถ้าจะ... / หากต้องการ...",
+   "members": [
+    "(으)려면/EC"
+   ]
+  },
+  {
+   "name": "-거나",
+   "en": "or",
+   "th": "หรือ...",
+   "members": [
+    "거나/EC"
+   ]
+  },
+  {
+   "name": "-아/어 보다",
+   "en": "try doing",
+   "th": "ลอง...",
+   "members": [
+    "어/EC 보/VX"
+   ]
+  },
+  {
+   "name": "-아/어 오다",
+   "en": "have been doing (up to now)",
+   "th": "...มาตลอด (จนถึงปัจจุบัน)",
+   "members": [
+    "어/EC 오/VX"
+   ]
+  },
+  {
+   "name": "-아/어 가다",
+   "en": "go on ~ing (continuing)",
+   "th": "...ไปเรื่อย ๆ (ต่อเนื่องไป)",
+   "members": [
+    "어/EC 가/VX"
+   ]
+  },
+  {
+   "name": "-아/어 나가다",
+   "en": "keep doing, carry on",
+   "th": "ดำเนิน...ต่อไป",
+   "members": [
+    "어/EC 나가/VX"
+   ]
+  },
+  {
+   "name": "-는지 / -(으)ㄴ지",
+   "en": "whether, if (indirect question)",
+   "th": "ว่า...หรือไม่ (คำถามทางอ้อม)",
+   "members": [
+    "는지/EC",
+    "ᆫ지/EC"
+   ]
+  },
+  {
+   "name": "-다가",
+   "en": "while doing ~, then (action changes or is interrupted)",
+   "th": "...อยู่แล้วก็... (เปลี่ยนการกระทำ/ถูกขัดจังหวะ)",
+   "members": [
+    "다가/EC"
+   ]
+  },
+  {
+   "name": "-는 등",
+   "en": "and so on; such as",
+   "th": "...เป็นต้น",
+   "members": [
+    "는/ETM 등/NNB"
+   ]
+  },
+  {
+   "name": "-아/어 놓다",
+   "en": "do in advance; leave in a state",
+   "th": "...ไว้ (ทำไว้ล่วงหน้า / ทิ้งไว้ในสภาพนั้น)",
+   "members": [
+    "어/EC 놓/VX"
+   ]
+  },
+  {
+   "name": "-아/어 두다",
+   "en": "do and keep (for later)",
+   "th": "...ไว้ (เก็บไว้ใช้ภายหลัง)",
+   "members": [
+    "어/EC 두/VX"
+   ]
+  },
+  {
+   "name": "-고자 (하다)",
+   "en": "in order to; wish to (formal)",
+   "th": "เพื่อ... / ต้องการ... (ภาษาทางการ)",
+   "members": [
+    "고자/EC"
+   ]
+  },
+  {
+   "name": "뿐만 아니라 / (이/가) 아니라",
+   "en": "not only ~ but also / not A but B",
+   "th": "ไม่เพียงแต่...แต่ยัง... / ไม่ใช่...แต่เป็น...",
+   "members": [
+    "라/EC"
+   ],
+   "note": "Kiwi found only the '라' piece of 아니라; check the examples."
+  },
+  {
+   "name": "-다 보면 / -다 보니",
+   "en": "if you keep doing (you will find) / as I kept doing (I realised)",
+   "th": "ถ้า...ไปเรื่อย ๆ ก็จะ... / พอ...ไปเรื่อย ๆ ก็เลย...",
+   "members": [
+    "다/EC 보/VX"
+   ]
+  },
+  {
+   "name": "-(으)러",
+   "en": "(go / come) in order to",
+   "th": "ไป/มาเพื่อ...",
+   "members": [
+    "(으)러/EC"
+   ]
+  },
+  {
+   "name": "-(으)ㅁ에도 (불구하고)",
+   "en": "despite",
+   "th": "ทั้ง ๆ ที่... / แม้ว่า...",
+   "members": [
+    "(으)ㅁ/ETN 에/JKB"
+   ]
+  },
+  {
+   "name": "-는데 / -(으)ㄴ데",
+   "en": "and / but (giving background)",
+   "th": "...แต่ / ...และ (ให้ข้อมูลพื้นหลัง)",
+   "members": [
+    "는데/EC",
+    "ᆫ데/EC"
+   ]
+  },
+  {
+   "name": "-아/어 내다",
+   "en": "manage to; do through to the end",
+   "th": "...จนสำเร็จ / ...ออกมาได้",
+   "members": [
+    "어/EC 내/VX"
+   ]
+  },
+  {
+   "name": "-(으)니",
+   "en": "since, as; when (and then found)",
+   "th": "เพราะ... / พอ...ก็พบว่า...",
+   "members": [
+    "(으)니/EC"
+   ]
+  },
+  {
+   "name": "-자",
+   "en": "as soon as; when (formal, written)",
+   "th": "ทันทีที่... / พอ...ก็...",
+   "members": [
+    "자/EC"
+   ]
+  },
+  {
+   "name": "-아/어 하다",
+   "en": "shows feelings or habits: 좋아하다, 즐겨 하다",
+   "th": "แสดงความรู้สึก/ความชอบ เช่น ชอบ...",
+   "members": [
+    "어/EC 하/VX"
+   ]
+  },
+  {
+   "name": "-더라도",
+   "en": "even if (strong)",
+   "th": "ถึงแม้จะ...ก็ตาม",
+   "members": [
+    "더라도/EC"
+   ]
+  },
+  {
+   "name": "-고 싶다",
+   "en": "want to",
+   "th": "อยาก...",
+   "members": [
+    "고/EC 싶/VX"
+   ]
+  },
+  {
+   "name": "-기도 하다",
+   "en": "also; sometimes (do)",
+   "th": "...ด้วย / บางครั้งก็...",
+   "members": [
+    "기/ETN 도/JX 하/VX"
+   ]
+  },
+  {
+   "name": "-(으)ㅁ으로써",
+   "en": "by (doing)",
+   "th": "โดยการ...",
+   "members": [
+    "(으)ㅁ/ETN 으로써/JKB"
+   ]
+  },
+  {
+   "name": "-자마자",
+   "en": "as soon as",
+   "th": "ทันทีที่...",
+   "members": [
+    "자마자/EC"
+   ]
+  },
+  {
+   "name": "-고 나서",
+   "en": "after (finishing)",
+   "th": "หลังจาก...เสร็จแล้ว",
+   "members": [
+    "고/EC 나/VX"
+   ]
+  },
+  {
+   "name": "-(으)ㄹ 뻔하다",
+   "en": "almost (happened)",
+   "th": "เกือบจะ...",
+   "members": [
+    "(으)ㄹ/ETM 뻔/NNB 하/XSA"
+   ]
+  },
+  {
+   "name": "-(으)ㄴ 척하다",
+   "en": "pretend",
+   "th": "แกล้งทำเป็น...",
+   "members": [
+    "(으)ㄴ/ETM 척/NNB",
+    "(으)ㄴ/ETM 척/NNB 하/VV"
+   ]
+  },
+  {
+   "name": "-(으)ㄴ 탓에",
+   "en": "because of (negative result, blame)",
+   "th": "เพราะ... (ผลเสีย / โทษว่าเป็นสาเหตุ)",
+   "members": [
+    "(으)ㄴ/ETM 탓/NNG",
+    "(으)ㄴ/ETM 탓/NNG 에/JKB"
+   ]
+  },
+  {
+   "name": "-곤 하다",
+   "en": "used to (habit)",
+   "th": "มักจะ... (เป็นนิสัย)",
+   "members": [
+    "곤/EC 하/VX"
+   ]
+  },
+  {
+   "name": "-기로 하다",
+   "en": "decide to",
+   "th": "ตัดสินใจว่าจะ...",
+   "members": [
+    "기/ETN 로/JKB",
+    "기/ETN 로/JKB 하/VV"
+   ]
+  },
+  {
+   "name": "-(으)ㄴ 적이 있다/없다",
+   "en": "have (never) done before",
+   "th": "เคย... / ไม่เคย...",
+   "members": [
+    "(으)ㄴ/ETM 적/NNB",
+    "(으)ㄴ/ETM 적/NNB 이/JKS 없/VA",
+    "(으)ㄴ/ETM 적/NNB 이/JKS 있/VA"
+   ]
+  },
+  {
+   "name": "-(으)므로",
+   "en": "because (formal, written)",
+   "th": "เนื่องจาก... (ภาษาเขียน)",
+   "members": [
+    "(으)므로/EC"
+   ]
+  },
+  {
+   "name": "-(으)ㄴ 지 (시간이 되다)",
+   "en": "(time) since",
+   "th": "ตั้งแต่...มาเป็นเวลา... (ระยะเวลา)",
+   "members": [
+    "(으)ㄴ/ETM 지/NNB"
+   ]
+  },
+  {
+   "name": "-(으)ㄹ 리가 없다",
+   "en": "there is no way that",
+   "th": "ไม่มีทางที่จะ...",
+   "members": [
+    "(으)ㄹ/ETM 리/NNB",
+    "(으)ㄹ/ETM 리/NNB 가/JKS 없/VA"
+   ]
+  },
+  {
+   "name": "-기만 하면",
+   "en": "as long as; whenever (just)",
+   "th": "แค่...ก็... / ทุกครั้งที่...",
+   "members": [
+    "기/ETN 만/JX 하/VX"
+   ]
+  },
+  {
+   "name": "-(으)ㄹ까 봐",
+   "en": "worried that, in case",
+   "th": "กลัวว่าจะ...",
+   "members": [
+    "ᆯ까/EC 보/VX"
+   ]
+  },
+  {
+   "name": "-(으)나",
+   "en": "but (formal, written)",
+   "th": "แต่... (ภาษาเขียน)",
+   "members": [
+    "(으)나/EC"
+   ]
+  },
+  {
+   "name": "-는 법이다",
+   "en": "it is natural that; that is how things are",
+   "th": "ย่อมจะ... (เป็นธรรมดา)",
+   "members": [
+    "는/ETM 법/NNB",
+    "는/ETM 법/NNB 이/VCP"
+   ]
+  },
+  {
+   "name": "-는 바람에",
+   "en": "because (something unexpected caused a bad result)",
+   "th": "เพราะ... (เกิดเหตุไม่คาดคิด ทำให้ผลออกมาไม่ดี)",
+   "members": [
+    "는/ETM 바람/NNB 에/JKB"
+   ]
+  },
+  {
+   "name": "-는 대신(에)",
+   "en": "instead of; in exchange for",
+   "th": "แทนที่จะ... / แลกกับ...",
+   "members": [
+    "는/ETM 대신/NNG 에/JKB"
+   ]
+  },
+  {
+   "name": "-(이)라도",
+   "en": "even; at least (if nothing else)",
+   "th": "แม้แต่... / ...ก็ยังดี",
+   "members": [
+    "라도/EC"
+   ]
+  },
+  {
+   "name": "-ㄴ/는다면",
+   "en": "if (hypothetical)",
+   "th": "ถ้าหากว่า... (สมมติ)",
+   "members": [
+    "ᆫ다면/EC"
+   ]
+  },
+  {
+   "name": "-더니",
+   "en": "(saw / did in the past) and then, so",
+   "th": "...แล้วก็... (สิ่งที่เห็นหรือทำในอดีต แล้วเกิดผลตามมา)",
+   "members": [
+    "더니/EC"
+   ]
+  },
+  {
+   "name": "-기 위해(서)",
+   "en": "in order to, for",
+   "th": "เพื่อ...",
+   "members": [
+    "기/ETN 위하/VV"
+   ]
+  },
+  {
+   "name": "-(으)ㄹ지도 모르다",
+   "en": "might (I'm not sure)",
+   "th": "อาจจะ... ก็ได้ (ไม่แน่ใจ)",
+   "members": [
+    "을지/EC 도/JX 모르/VV"
+   ]
+  },
+  {
+   "name": "-(으)ㄴ/는 셈이다",
+   "en": "it is as good as, practically",
+   "th": "ถือว่า... / เท่ากับว่า...",
+   "members": [
+    "(으)ㄴ/ETM 셈/NNB 이/VCP",
+    "는/ETM 셈/NNB 이/VCP"
+   ]
+  },
+  {
+   "name": "-는/(으)ㄴ 대로",
+   "en": "as, in the way that; just as",
+   "th": "ตามที่... / อย่างที่...",
+   "members": [
+    "(으)ㄴ/ETM 대로/NNB"
+   ]
+  },
+  {
+   "name": "-(으)ㄴ 것과 같이",
+   "en": "the same as, just like",
+   "th": "เหมือนกับที่...",
+   "members": [
+    "(으)ㄴ/ETM 것/NNB 과/JKB 같이/MAG"
+   ]
+  },
+  {
+   "name": "-(으)ㄴ 거나 마찬가지이다",
+   "en": "is the same as, as good as",
+   "th": "ก็ไม่ต่างจาก... / เท่ากับ...",
+   "members": [
+    "(으)ㄴ/ETM 거/NNB 나/JX 마찬가지/NNG"
+   ]
+  },
+  {
+   "name": "-아/어야만 하다",
+   "en": "must (no other way, strong)",
+   "th": "ต้อง...เท่านั้น (ไม่มีทางอื่น)",
+   "members": [
+    "어야/EC 만/JX 하/VX"
+   ]
+  },
+  {
+   "name": "-는 김에",
+   "en": "while (already) doing ~, also",
+   "th": "ในเมื่อ...อยู่แล้ว ก็ถือโอกาส...",
+   "members": [
+    "는/ETM 김/NNB 에/JKB"
+   ]
+  },
+  {
+   "name": "-(으)ㄴ/는 반면에",
+   "en": "while, whereas (contrast)",
+   "th": "ในขณะที่... / ตรงกันข้าม...",
+   "members": [
+    "(으)ㄴ/ETM 반면/NNG 에/JKB"
+   ]
+  },
+  {
+   "name": "-기 무섭게",
+   "en": "as soon as (very quickly)",
+   "th": "ทันทีที่... (เร็วมาก)",
+   "members": [
+    "기/ETN 무섭/VA"
+   ]
+  },
+  {
+   "name": "-기 나름이다",
+   "en": "depends on (how you) ~",
+   "th": "ขึ้นอยู่กับว่า...",
+   "members": [
+    "기/ETN 나름/NNB 이/VCP"
+   ]
+  },
+  {
+   "name": "-(으)ㄹ 줄 모르다/알다",
+   "en": "not know how to / know how to; (didn't) expect that",
+   "th": "(ไม่)รู้วิธี... / ไม่คิดว่าจะ...",
+   "members": [
+    "(으)ㄹ/ETM 줄/NNB 모르/VV"
+   ]
+  },
+  {
+   "name": "-(으)ㄹ 텐데",
+   "en": "would ~ (so / but); I expect ~",
+   "th": "คงจะ... (แต่/ดังนั้น)",
+   "members": [
+    "(으)ㄹ/ETM 터/NNB 이/VCP"
+   ]
+  },
+  {
+   "name": "-느라고",
+   "en": "because (busy) doing ~ (couldn't do something else)",
+   "th": "เพราะมัวแต่... (เลยไม่ได้ทำอย่างอื่น)",
+   "members": [
+    "느라고/EC"
+   ]
+  },
+  {
+   "name": "-기(가) 어렵다",
+   "en": "it is hard to",
+   "th": "ยากที่จะ...",
+   "members": [
+    "기/ETN 어렵/VA",
+    "기/ETN 가/JKS 어렵/VA"
+   ]
+  },
+  {
+   "name": "-는 동안(에)",
+   "en": "while, during",
+   "th": "ในระหว่างที่...",
+   "members": [
+    "는/ETM 동안/NNG",
+    "는/ETM 동안/NNG 에/JKB"
+   ]
+  }
+ ],
+ "dropped": {
+  "ᆫ가/EC": "Noise: part of the word 누군가 (someone), not grammar.",
+  "어/EC 들/VX": "Noise: part of the verb 스며들다, not grammar.",
+  "어서/EC 하/VV": "Noise: 가서 + 해야 are two separate grammar points.",
+  "게/EC 하/VX 기/ETN": "Combination: -게 하다 + -기, each listed separately.",
+  "도록/EC 하/VX 어야/EC 하/VX": "Combination: -도록 하다 + -아/어야 하다, each listed separately.",
+  "어/EC 있/VX 는/ETM 것/NNB": "Combination: -아/어 있다 + -는 것, each listed separately.",
+  "어/EC 있/VX 지/EC 않/VX": "Combination: -아/어 있다 + -지 않다, each listed separately.",
+  "고/EC 있/VX 는/ETM 것/NNB": "Combination: -고 있다 + -는 것, each listed separately.",
+  "게/EC 하/VV 어야/EC 하/VX": "Noise: 어떻게 해야 (how should), not -게 하다.",
+  "어/EC 지/VX 는/ETM 것/NNB": "Combination: -아/어지다 + -는 것, each listed separately.",
+  "지/EC 못하/VX 고/EC 있/VX": "Combination: -지 못하다 + -고 있다, each listed separately.",
+  "어/EC 보/VX (으)ㄹ/ETM 수/NNB": "Combination: -아/어 보다 + -(으)ㄹ 수 있다, each listed separately.",
+  "어/EC 지/VX 고/EC 있/VX": "Combination: -아/어지다 + -고 있다, each listed separately.",
+  "게/EC 되/VV 는/ETM 것/NNB": "Combination: -게 되다 + -는 것, each listed separately.",
+  "지/EC 않/VX 도록/EC 하/VX": "Combination: -지 않다 + -도록 하다, each listed separately.",
+  "어야/EC 하/VX (으)ㄹ/ETM 것/NNB": "Combination: -아/어야 하다 + -(으)ㄹ 것이다, each listed separately."
+ }
+}
