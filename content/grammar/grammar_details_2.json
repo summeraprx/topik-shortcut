@@ -835,8 +835,8 @@
  },
  "-(으)ㄹ까 봐": {
   "form": {
-   "en": "V/A-(으)ㄹ까 봐(서)",
-   "th": "V/A-(으)ㄹ까 봐(서)"
+   "en": "V/A-을까 봐(서) (final consonant) · V/A-ㄹ까 봐(서) (no final consonant)",
+   "th": "V/A-을까 봐(서) (มีตัวสะกด) · V/A-ㄹ까 봐(서) (ไม่มีตัวสะกด)"
   },
   "rules": [
    {
@@ -955,8 +955,8 @@
  },
  "-(이)라도": {
   "form": {
-   "en": "N(이)라도 · V-기라도 하다",
-   "th": "N(이)라도 · V-기라도 하다"
+   "en": "N이라도 (final consonant) · N라도 (no final consonant) · V-기라도 하다",
+   "th": "N이라도 (มีตัวสะกด) · N라도 (ไม่มีตัวสะกด) · V-기라도 하다"
   },
   "rules": [],
   "similar": [
@@ -987,14 +987,19 @@
  },
  "-더니": {
   "form": {
-   "en": "V/A-더니 (change seen in someone else) · -았/었더니 (my action → result I found)",
-   "th": "V/A-더니 (เห็นการเปลี่ยนแปลงของผู้อื่น) · -았/었더니 (การกระทำของฉัน → ผลที่พบ)"
+   "en": "V/A-더니 · N(이)더니 (change seen in someone else)\n· -았/었더니 (my action → result I found)",
+   "th": "V/A-더니 · N(이)더니 (เห็นการเปลี่ยนแปลงของผู้อื่น)\n· -았/었더니 (การกระทำของฉัน → ผลที่พบ)"
   },
   "rules": [
    {
     "t": "note",
-    "en": "Without 았/었: a change you saw in someone else. With 았/었: your own action and what you discovered.",
-    "th": "ไม่มี 았/었: การเปลี่ยนแปลงที่เห็นในผู้อื่น มี 았/었: การกระทำของตนและสิ่งที่พบ"
+    "en": "Without 았/었: a change you saw.",
+    "th": "ไม่มี 았/었: การเปลี่ยนแปลงที่เห็น"
+   },
+   {
+    "t": "note",
+    "en": "With 았/었: your action and what you discovered.",
+    "th": "มี 았/었: การกระทำของตนและสิ่งที่พบ"
    }
   ],
   "similar": [

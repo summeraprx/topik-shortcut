@@ -61,6 +61,7 @@ def build():
         tested = sorted({q for m in members for q in m["questions"] if GRAMMAR_QUESTIONS.match(q)})
         groups.append({
             "id": f"g{i}", "name": g["name"], "en": g["en"], "th": g["th"], "note": g.get("note", ""),
+            "reviewed": g.get("reviewed", ""),
             "count": sum(m["count"] for m in members),
             "rounds": sorted({r for m in members for r in m["rounds"]}),
             "members": [{"pattern": m["pattern"], "count": m["count"]} for m in members],
@@ -178,12 +179,13 @@ button.more { margin-top: 6px; font-size: 13px; padding: 3px 10px; }
 <script>
 const GROUPS = __GROUPS__;
 const DROPPED = __DROPPED__;
-const KEY = "grammar-review-v1";
+const KEY = "grammar-review-v2";   // v2: owner's first 8 reviews are now in content/
 const SHOW_FIRST = __SHOW_FIRST__;
 const EDITABLE = ["name", "en", "th", "form_en", "form_th", "rules_en", "rules_th", "similar_en", "similar_th", "note_en", "note_th"];
 let state = {};
 try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { state = {}; }
-const rec = id => state[id] || (state[id] = { status: null, edits: {}, note: "", restore: false });
+const BY_ID = Object.fromEntries(GROUPS.map(g => [g.id, g]));
+const rec = id => state[id] || (state[id] = { status: BY_ID[id] && BY_ID[id].reviewed ? "ok" : null, edits: {}, note: "", restore: false });
 
 function persist() {
   try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}

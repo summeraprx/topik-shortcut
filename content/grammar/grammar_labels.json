@@ -54,14 +54,15 @@
   },
   {
    "name": "-는/(으)ㄴ/(으)ㄹ 것",
-   "en": "turns a verb into a noun: 'the thing that / the fact of ~ing'",
-   "th": "ทำให้กริยาเป็นคำนาม: 'สิ่งที่... / การ...'",
+   "en": "the thing that / the fact of ~ing",
+   "th": "สิ่งที่... / การ...",
    "members": [
     "는/ETM 것/NNB",
     "(으)ㄴ/ETM 것/NNB",
     "(으)ㄹ/ETM 것/NNB",
     "는/ETM 것/NNB 에/JKB"
-   ]
+   ],
+   "reviewed": "owner 2026-10-20"
   },
   {
    "name": "-는/(으)ㄴ 것이다",
@@ -219,7 +220,8 @@
    "th": "...ไปให้ / ...มาให้ (เช่น พาไปส่ง)",
    "members": [
     "어다/EC 주/VX"
-   ]
+   ],
+   "reviewed": "owner 2026-10-20"
   },
   {
    "name": "-도록",
@@ -400,7 +402,8 @@
    "th": "...ไว้ (เพื่อใช้ภายหลัง)",
    "members": [
     "어/EC 두/VX"
-   ]
+   ],
+   "reviewed": "owner 2026-10-20"
   },
   {
    "name": "-고자 (하다)",
@@ -624,7 +627,8 @@
    "th": "กลัวว่าจะ...",
    "members": [
     "ᆯ까/EC 보/VX"
-   ]
+   ],
+   "reviewed": "owner 2026-10-20"
   },
   {
    "name": "-(으)나",
@@ -632,7 +636,8 @@
    "th": "แต่... (ภาษาเขียน)",
    "members": [
     "(으)나/EC"
-   ]
+   ],
+   "reviewed": "owner 2026-10-20"
   },
   {
    "name": "-는 법이다",
@@ -661,27 +666,30 @@
   },
   {
    "name": "-(이)라도",
-   "en": "even; at least (if nothing else)",
-   "th": "แม้แต่... / ...ก็ยังดี",
+   "en": "even; at least",
+   "th": "อย่างน้อยก็… / เอา…ก็ได้ / แม้แต่…ก็ยัง",
    "members": [
     "라도/EC"
-   ]
+   ],
+   "reviewed": "owner 2026-10-20"
   },
   {
    "name": "-ㄴ/는다면",
-   "en": "if (hypothetical)",
-   "th": "ถ้าหากว่า... (สมมติ)",
+   "en": "if",
+   "th": "ถ้าหากว่า...",
    "members": [
     "ᆫ다면/EC"
-   ]
+   ],
+   "reviewed": "owner 2026-10-20"
   },
   {
    "name": "-더니",
-   "en": "(saw / did in the past) and then, so",
-   "th": "...แล้วก็... (สิ่งที่เห็นหรือทำในอดีต แล้วเกิดผลตามมา)",
+   "en": "and then, so",
+   "th": "...แล้วก็...",
    "members": [
     "더니/EC"
-   ]
+   ],
+   "reviewed": "owner 2026-10-20"
   },
   {
    "name": "-기 위해(서)",
