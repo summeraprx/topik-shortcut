@@ -14,7 +14,7 @@ CANDIDATES = ROOT / "data" / "processed" / "analysis" / "grammar_candidates.json
 LABELS = ROOT / "content" / "grammar" / "grammar_labels.json"
 DETAILS = sorted((ROOT / "content" / "grammar").glob("grammar_details_*.json"))
 RULE_MARK = {"ok": "✓", "no": "✗", "note": "•"}
-EXAM_NOTE = {"en": "(paired in the exam: round {} Q{})", "th": "(เคยออกข้อสอบเป็นคู่กัน: ครั้งที่ {} ข้อ {})"}
+EXAM_NOTE = {"en": "(appeared in the exam: round {} Q{})", "th": "(เคยออกข้อสอบครั้งที่ {} ข้อ {})"}
 
 
 def exam_parts(exam):
@@ -42,8 +42,7 @@ def build():
     def text_blocks(d, lang):
         """Form / rules / similar as editable text, one item per line."""
         rules = "\n".join(f"{RULE_MARK[r['t']]} {r[lang]}" for r in d.get("rules", []))
-        similar = "\n".join(f"≈ {s['g']}" + (f" {EXAM_NOTE[lang].format(*exam_parts(s['exam']))}" if s.get("exam") else "")
-                             for s in d.get("similar", []))     # names only (owner's style) + exam pair
+        similar = "\n".join(f"≈ {s['g']}" for s in d.get("similar", []))     # names only (owner's style)
         return {f"form_{lang}": d.get("form", {}).get(lang, ""), f"rules_{lang}": rules, f"similar_{lang}": similar,
                 f"note_{lang}": d.get("note", {}).get(lang, "")}
 
@@ -66,7 +65,8 @@ def build():
             "rounds": sorted({r for m in members for r in m["rounds"]}),
             "members": [{"pattern": m["pattern"], "count": m["count"]} for m in members],
             "tested": tested, "examples": examples,
-            "exam_pair": any(s.get("exam") for s in d.get("similar", [])),
+            "exam_notes": [{lang: f"{g['name']} ≈ {s['g']} {EXAM_NOTE[lang].format(*exam_parts(s['exam']))}"
+                            for lang in ("en", "th")} for s in d.get("similar", []) if s.get("exam")],
             **text_blocks(d, "en"), **text_blocks(d, "th"),
         })
     groups.sort(key=lambda g: (not g["tested"], -g["count"]))
@@ -142,6 +142,9 @@ input[type=text], textarea { width: 100%; font: inherit; color: var(--ink); back
 input.name { font-size: 17px; font-weight: 600; }
 textarea { min-height: 38px; resize: vertical; }
 .exhead { margin-top: 12px; font-weight: 600; font-size: 13px; color: var(--muted); }
+.examnote { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; padding: 8px 10px;
+  border-top: 1px solid var(--line); background: var(--edit-bg); border-radius: 6px; font-size: 13px; }
+@media (max-width: 720px) { .examnote { grid-template-columns: 1fr; } }
 button.more { margin-top: 6px; font-size: 13px; padding: 3px 10px; }
 .examples { margin: 4px 0 0; padding: 0; list-style: none; }
 .examples li { border-top: 1px dashed var(--line); padding: 6px 0; font-size: 14px; }
@@ -261,6 +264,11 @@ function render(g) {
     more.textContent = `Show all ${g.examples.length}`;
     more.onclick = () => { ul.querySelectorAll("li[hidden]").forEach(li => li.hidden = false); more.remove(); };
     card.appendChild(more);
+  }
+  for (const n of g.exam_notes) {
+    const f = document.createElement("div"); f.className = "examnote";
+    f.innerHTML = `<div>${n.en}</div><div>${n.th}</div>`;
+    card.appendChild(f);
   }
   renderState(g); persist();
 }
