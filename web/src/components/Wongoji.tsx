@@ -6,6 +6,8 @@ import { useMemo, useRef, useState } from "react";
 // a space takes a cell. Writing starts in the first cell: the writer types the indent space
 // at the start of each paragraph themselves (it counts as a character). A new paragraph (Enter)
 // starts a new row; a space that only wraps onto the start of a row is not written.
+// Arabic numerals go two per cell, paired from the left (2019 -> 20|19, 340 -> 34|0), as in
+// rule 4 of the official guide. The counter still counts each digit (the official counts do).
 // Typing goes into a transparent textarea laid over the grid (so Korean input works normally).
 const COLS = 25;
 
@@ -15,12 +17,21 @@ function layout(text: string) {
   const cells: Cell[] = [];
   const cellOf: number[] = new Array(text.length + 1).fill(0);
   let paragraphStart = true;
+  let digitCell: number | null = null; // cell holding a single digit that the next digit can join
   for (let i = 0; i < text.length; i++) {
     const ch = text[i];
+    const digit = ch >= "0" && ch <= "9";
+    if (digit && digitCell !== null) {
+      cells[digitCell].ch += ch;
+      cellOf[i] = digitCell;
+      digitCell = null;
+      continue;
+    }
     if (ch === "\n") {
       cellOf[i] = cells.length;
       while (cells.length % COLS !== 0) cells.push({ ch: "", index: null });
       paragraphStart = true;
+      digitCell = null;
       continue;
     }
     cellOf[i] = cells.length;
@@ -28,8 +39,9 @@ function layout(text: string) {
     if (ch === " " && cells.length % COLS === 0 && !paragraphStart) continue;
     cells.push({ ch, index: i });
     paragraphStart = false;
+    digitCell = digit ? cells.length - 1 : null;
   }
-  cellOf[text.length] = cells.length;
+  cellOf[text.length] = digitCell ?? cells.length;
   return { cells, cellOf };
 }
 
@@ -68,7 +80,7 @@ export default function Wongoji({ value, onChange, minRows }: { value: string; o
           {Array.from({ length: rows * COLS }, (_, i) => (
             <div
               key={i}
-              className={`flex aspect-square items-center justify-center border-r border-b border-line text-[clamp(10px,2.6vw,18px)] leading-none ${
+              className={`flex aspect-square items-center justify-center border-r border-b border-line text-[clamp(10px,2.6vw,18px)] leading-none tracking-tighter ${
                 focused && i === caretCell ? "bg-accent-soft" : ""
               } ${i % COLS === COLS - 1 ? "border-r-0" : ""}`}
             >
