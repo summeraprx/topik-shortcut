@@ -62,6 +62,8 @@ def inject_content(rnd, number, text, other):
     yield "not_korean", "This answer is mostly written in English, not Korean. " * 8 + s[0], "English"
     yield "off_topic", other, "another round's answer"
     # drop every sentence that mentions the last key item (Q53: outlook / cause, Q54: solutions)
+    if rnd not in TOPICS:
+        return
     words = [w.replace(" ", "") for w in TOPICS[rnd][str(number)][-1]["any"]]
     kept = [x for x in re.split(r"(?<=[.?!])\s+", text) if not any(w in x.replace(" ", "") for w in words)]
     yield "missing_item", " ".join(kept), "last key item removed"

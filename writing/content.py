@@ -1,7 +1,8 @@
 """Writing checker, content layer (no AI): is the answer real Korean, and is it about the question?
 
   nonsense  loose consonants/vowels (ㅁㄴㅇㄹ), mostly non-Korean text, the same sentence repeated
-  topic     53/54: the key items of the question (content/writing/topics.json) the answer never mentions
+  topic     53/54: the key items of the question the answer never mentions
+            (data/content/writing_topics.json: exam content, not in git; without it the check is skipped)
 
 These are shallow checks: they catch nonsense and off-topic answers, they do not grade the content.
 """
@@ -13,7 +14,8 @@ from pathlib import Path
 from writing.rules import issue, kiwi
 
 ROOT = Path(__file__).resolve().parent.parent
-TOPICS = json.loads((ROOT / "content" / "writing" / "topics.json").read_text())
+TOPICS_FILE = ROOT / "data" / "content" / "writing_topics.json"
+TOPICS = json.loads(TOPICS_FILE.read_text()) if TOPICS_FILE.exists() else {}
 
 
 def check_nonsense(text):

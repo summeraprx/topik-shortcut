@@ -155,7 +155,7 @@ audit sheet image for human check.
 ## 12. Open items
 
 - **Before public launch:** owner reviews ALL content (grammar in `content/grammar/` and vocabulary), including the 8 grammar points looked at on 2026-10-20. Until then it is Claude-written and labelled as not yet reviewed. Priority: Thai wording and Rules.
-- Before public launch: also review the 2,506 vocabulary translations (`content/vocab/`) and the writing topic items (`content/writing/topics.json`), and move exam fragments out of git (topics.json key phrases, `writing/model_answers.py` short answers).
+- Before public launch: also review the 2,506 vocabulary translations (`content/vocab/`) and the writing topic items (`data/content/writing_topics.json`). Done 2026-10-20: exam fragments moved out of git (topic items → `data/content/writing_topics.json`, Q51/52 short answers → `data/corrections/writing_short_answers.json`).
 - Writing checker: content quality is not graded yet ("no issues" ≠ good answer) → stronger model or training, scored against the official criteria; rework the "no issues" message.
 - Done 2026-10-20: 원고지 grid puts digits two per cell, paired from the left (official rule 4; odd numbers like 340 → 34|0 is an assumption); the counter still counts each digit, as the official counts do.
 - Later (if time): round 96 as held-out **test set** for an honest accuracy number

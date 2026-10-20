@@ -2,7 +2,8 @@
 
 Q53/54 essays come from the answer-key OCR (page 2): Q53 ends at the official count "(NNN자)",
 Q54 is the rest. Printed lines are joined with the tested line-joining rule (mid-word or not).
-Q51/52 short answers (first of the official alternatives) were read from the same pages.
+Q51/52 short answers (first of the official alternatives) were read from the same pages by hand;
+they are exam content, so they live in data/corrections/writing_short_answers.json (not in git).
 Run: .venv/bin/python -m writing.model_answers
 """
 import json
@@ -14,11 +15,7 @@ from pipeline.structure import is_mid_word
 ROOT = Path(__file__).resolve().parent.parent
 OCR = ROOT / "data" / "ocr"
 OUT = ROOT / "data" / "processed" / "writing_model_answers.json"
-SHORT = {
-    102: {51: {"㉠": "(removed)", "㉡": "(removed)"}, 52: {"㉠": "(removed)", "㉡": "(removed)"}},
-    96: {51: {"㉠": "(removed)", "㉡": "(removed)"}, 52: {"㉠": "(removed)", "㉡": "(removed)"}},
-    91: {51: {"㉠": "(removed)", "㉡": "(removed)"}, 52: {"㉠": "(removed)", "㉡": "(removed)"}},
-}
+SHORT_FILE = ROOT / "data" / "corrections" / "writing_short_answers.json"
 MARKERS = {"51", "52", "53", "54", "10", "30", "50"}
 
 
@@ -54,9 +51,9 @@ def essays(rnd):
 
 def main():
     out = {}
-    for rnd, short in SHORT.items():
-        q53, q54, official = essays(rnd)
-        out[str(rnd)] = {"51": short[51], "52": short[52], "53": q53, "54": q54, "53_official_count": official}
+    for rnd, short in json.loads(SHORT_FILE.read_text()).items():
+        q53, q54, official = essays(int(rnd))
+        out[rnd] = {"51": short["51"], "52": short["52"], "53": q53, "54": q54, "53_official_count": official}
         print(f"round {rnd}: 53 = {len(q53)} chars (official {official}) | 54 = {len(q54)} chars")
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1))
 
