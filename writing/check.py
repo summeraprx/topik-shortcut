@@ -6,7 +6,7 @@
   4. ai        spelling / grammar, local model; shown as "possible" errors (it finds well, fixes less well)
 
 Run:  .venv/bin/python -m writing.check 102 54 my_answer.txt          (53/54: text file)
-      .venv/bin/python -m writing.check 102 51 "㉠ 방문(removed)" "㉡ 시간이 괜찮으시면"   (made-up answer)
+      .venv/bin/python -m writing.check 102 51 "㉠ 연락해 주시기 바랍니다" "㉡ 시간이 괜찮으시면"   (made-up answer)
       add --no-ai to skip the slow model
 """
 import json
