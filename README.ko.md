@@ -6,6 +6,12 @@
 
 > 포트폴리오 프로젝트(진행 중) · 범위와 설계 결정: [SPEC.md](SPEC.md) · 배운 점: [LEARNING_LOG.md](LEARNING_LOG.md)
 
+## 데모
+
+https://github.com/user-attachments/assets/63f116fa-6e24-4378-ab4d-930fbc7bce1e
+
+*2분 42초, 태국어 화면, 소리 없음: 홈 → 어휘(품사 필터, 검색) → 문법 카드 → 쓰기 검사 → TOPIK에 묻기(로컬 모델이라 답변에 15~60초 걸림).*
+
 ## 주요 기능
 
 | 기능 | 설명 |

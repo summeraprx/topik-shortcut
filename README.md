@@ -6,6 +6,12 @@ An AI study tool for the Korean proficiency test **TOPIK II**, built from **real
 
 > Portfolio project, work in progress. Scope and decisions: [SPEC.md](SPEC.md) · what I learned: [LEARNING_LOG.md](LEARNING_LOG.md)
 
+## Demo
+
+https://github.com/user-attachments/assets/63f116fa-6e24-4378-ab4d-930fbc7bce1e
+
+*2:42, Thai interface, no sound: home → vocabulary (part-of-speech filter, search) → grammar card → writing checker → Ask TOPIK (the local model takes 15–60 s per answer).*
+
 ## What it does
 
 | Feature | Description |
