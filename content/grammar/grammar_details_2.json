@@ -1,414 +1,1010 @@
 {
  "-(이)라고": {
-  "form": {"en": "N-(이)라고 하다 (N-이라고 after a final consonant, N-라고 without) · direct quote: \"…\"(이)라고 하다", "th": "N-(이)라고 하다 (มีตัวสะกด -이라고 / ไม่มี -라고) · อ้างตรง: \"…\"(이)라고 하다"},
+  "form": {
+   "en": "N-(이)라고 하다 (N-이라고 after a final consonant, N-라고 without) · direct quote: \"…\"(이)라고 하다",
+   "th": "N-(이)라고 하다 (มีตัวสะกด -이라고 / ไม่มี -라고) · อ้างตรง: \"…\"(이)라고 하다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-다고 (하다)", "en": "indirect quote of a statement", "th": "อ้างคำพูดทางอ้อมของประโยคบอกเล่า"}
-  ]
+   {
+    "g": "-다고 (하다)"
+   }
+  ],
+  "note": {
+   "en": "-(이)라고 = quoting a noun or statement: 'called ~ / that ~'\n-다고 (하다) = indirect quote of a statement",
+   "th": "-(이)라고 = ว่า... (อ้างอิงคำนามหรือคำพูด)\n-다고 (하다) = อ้างคำพูดทางอ้อมของประโยคบอกเล่า"
+  }
  },
  "-는 데": {
-  "form": {"en": "V-는 데 + 쓰다 · 필요하다 · 도움이 되다 · 중요하다 · 걸리다", "th": "V-는 데 + 쓰다 · 필요하다 · 도움이 되다 · 중요하다 · 걸리다"},
+  "form": {
+   "en": "V-는 데 + 쓰다 · 필요하다 · 도움이 되다 · 중요하다 · 걸리다",
+   "th": "V-는 데 + 쓰다 · 필요하다 · 도움이 되다 · 중요하다 · 걸리다"
+  },
   "rules": [
-   {"t": "note", "en": "Space before 데: 줄이는 데 (in reducing). Without a space, -는데 means 'but / and'.", "th": "มีวรรคก่อน 데: 줄이는 데 (ในการลด) ถ้าไม่มีวรรค -는데 แปลว่า 'แต่ / และ'"}
+   {
+    "t": "note",
+    "en": "Space before 데: 줄이는 데 (in reducing). Without a space, -는데 means 'but / and'.",
+    "th": "มีวรรคก่อน 데: 줄이는 데 (ในการลด) ถ้าไม่มีวรรค -는데 แปลว่า 'แต่ / และ'"
+   }
   ],
   "similar": [
-   {"g": "-기 위해(서)", "en": "purpose (in order to)", "th": "จุดประสงค์ (เพื่อ...)"}
-  ]
+   {
+    "g": "-기 위해(서)"
+   }
+  ],
+  "note": {
+   "en": "-는 데 = in / for (doing)\n-기 위해(서) = purpose (in order to)",
+   "th": "-는 데 = ในการ...\n-기 위해(서) = จุดประสงค์ (เพื่อ...)"
+  }
  },
  "-지만": {
-  "form": {"en": "V/A-지만 · past: -았/었지만 · N-(이)지만", "th": "V/A-지만 · อดีต: -았/었지만 · N-(이)지만"},
+  "form": {
+   "en": "V/A-지만 · past: -았/었지만 · N-(이)지만",
+   "th": "V/A-지만 · อดีต: -았/었지만 · N-(이)지만"
+  },
   "rules": [],
   "similar": [
-   {"g": "-(으)나", "en": "but (formal, written)", "th": "แต่ (ภาษาเขียน)"},
-   {"g": "-는데 / -(으)ㄴ데", "en": "but / background (softer)", "th": "แต่ / ให้ข้อมูลพื้นหลัง (นุ่มนวลกว่า)"}
-  ]
+   {
+    "g": "-(으)나"
+   },
+   {
+    "g": "-는데 / -(으)ㄴ데"
+   }
+  ],
+  "note": {
+   "en": "-지만 = but\n-(으)나 = but (formal, written)\n-는데 / -(으)ㄴ데 = but / background (softer)",
+   "th": "-지만 = แต่...\n-(으)나 = แต่ (ภาษาเขียน)\n-는데 / -(으)ㄴ데 = แต่ / ให้ข้อมูลพื้นหลัง (นุ่มนวลกว่า)"
+  }
  },
  "-기 때문에 / -기 때문이다": {
-  "form": {"en": "V/A-기 때문에 · past: -았/었기 때문에 · N 때문에 (because of N) · N-이기 때문에 (because it is N)", "th": "V/A-기 때문에 · อดีต: -았/었기 때문에 · N 때문에 (เพราะ N) · N-이기 때문에 (เพราะเป็น N)"},
+  "form": {
+   "en": "V/A-기 때문에 · past: -았/었기 때문에 · N 때문에 (because of N) · N-이기 때문에 (because it is N)",
+   "th": "V/A-기 때문에 · อดีต: -았/었기 때문에 · N 때문에 (เพราะ N) · N-이기 때문에 (เพราะเป็น N)"
+  },
   "rules": [
-   {"t": "no", "en": "No command or suggestion after it (늦었기 때문에 서두르세요 ✗ → 늦었으니까).", "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้ (늦었기 때문에 서두르세요 ✗ → 늦었으니까)"},
-   {"t": "ok", "en": "Past tense can go before it (갔기 때문에 ✓), unlike -아/어서.", "th": "ใส่อดีตข้างหน้าได้ (갔기 때문에 ✓) ต่างจาก -아/어서"}
+   {
+    "t": "no",
+    "en": "No command or suggestion after it (늦었기 때문에 서두르세요 ✗ → 늦었으니까).",
+    "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้ (늦었기 때문에 서두르세요 ✗ → 늦었으니까)"
+   },
+   {
+    "t": "ok",
+    "en": "Past tense can go before it (갔기 때문에 ✓), unlike -아/어서.",
+    "th": "ใส่อดีตข้างหน้าได้ (갔기 때문에 ✓) ต่างจาก -아/어서"
+   }
   ],
   "similar": [
-   {"g": "-아/어서", "en": "reason, everyday", "th": "เหตุผล ใช้ทั่วไป"},
-   {"g": "-(으)므로", "en": "reason, formal written", "th": "เหตุผล ภาษาเขียนทางการ"}
-  ]
+   {
+    "g": "-아/어서"
+   },
+   {
+    "g": "-(으)므로"
+   }
+  ],
+  "note": {
+   "en": "-기 때문에 / -기 때문이다 = because\n-아/어서 = because (everyday)\n-(으)므로 = reason, formal written",
+   "th": "-기 때문에 / -기 때문이다 = เพราะ... / เป็นเพราะ...\n-아/어서 = เพราะ... (ใช้ทั่วไป)\n-(으)므로 = เหตุผล ภาษาเขียนทางการ"
+  }
  },
  "-(으)려면": {
-  "form": {"en": "V-으려면 (final consonant) · -려면 (no final consonant or ㄹ)", "th": "V-으려면 (มีตัวสะกด) · -려면 (ไม่มีตัวสะกด หรือ ㄹ)"},
+  "form": {
+   "en": "V-으려면 (final consonant) · -려면 (no final consonant or ㄹ)",
+   "th": "V-으려면 (มีตัวสะกด) · -려면 (ไม่มีตัวสะกด หรือ ㄹ)"
+  },
   "rules": [
-   {"t": "note", "en": "The second part usually says what is needed: -아/어야 하다, 필요하다, -(으)면 되다.", "th": "ส่วนหลังมักบอกสิ่งที่ต้องทำ: -아/어야 하다, 필요하다, -(으)면 되다"}
+   {
+    "t": "note",
+    "en": "The second part usually says what is needed: -아/어야 하다, 필요하다, -(으)면 되다.",
+    "th": "ส่วนหลังมักบอกสิ่งที่ต้องทำ: -아/어야 하다, 필요하다, -(으)면 되다"
+   }
   ],
   "similar": [
-   {"g": "-기 위해서는", "en": "in order to (formal)", "th": "เพื่อจะ... (ทางการ)"}
-  ]
+   {
+    "g": "-기 위해서는"
+   }
+  ],
+  "note": {
+   "en": "-(으)려면 = if you want to\n-기 위해서는 = in order to (formal)",
+   "th": "-(으)려면 = ถ้าจะ... / หากต้องการ...\n-기 위해서는 = เพื่อจะ... (ทางการ)"
+  }
  },
  "-거나": {
-  "form": {"en": "V/A-거나 · for nouns: N(이)나", "th": "V/A-거나 · กับคำนาม: N(이)나"},
+  "form": {
+   "en": "V/A-거나 · for nouns: N(이)나",
+   "th": "V/A-거나 · กับคำนาม: N(이)나"
+  },
   "rules": [],
   "similar": [
-   {"g": "-든지", "en": "either / whichever", "th": "...หรือ...ก็ได้ / อย่างไหนก็ได้"}
-  ]
+   {
+    "g": "-든지"
+   }
+  ],
+  "note": {
+   "en": "-거나 = or\n-든지 = either / whichever",
+   "th": "-거나 = หรือ...\n-든지 = ...หรือ...ก็ได้ / อย่างไหนก็ได้"
+  }
  },
  "-아/어 보다": {
-  "form": {"en": "V-아/어 보다 · request: -아/어 보세요 · experience: -아/어 본 적이 있다", "th": "V-아/어 보다 · ขอร้อง: -아/어 보세요 · ประสบการณ์: -아/어 본 적이 있다"},
+  "form": {
+   "en": "V-아/어 보다 · request: -아/어 보세요 · experience: -아/어 본 적이 있다",
+   "th": "V-아/어 보다 · ขอร้อง: -아/어 보세요 · ประสบการณ์: -아/어 본 적이 있다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-(으)ㄴ 적이 있다/없다", "en": "have done before (experience)", "th": "เคย... (ประสบการณ์)"}
-  ]
+   {
+    "g": "-(으)ㄴ 적이 있다/없다"
+   }
+  ],
+  "note": {
+   "en": "-아/어 보다 = try doing\n-(으)ㄴ 적이 있다/없다 = have done before (experience)",
+   "th": "-아/어 보다 = ลอง...\n-(으)ㄴ 적이 있다/없다 = เคย... (ประสบการณ์)"
+  }
  },
  "-아/어 오다": {
-  "form": {"en": "V-아/어 오다 · past: -아/어 왔다", "th": "V-아/어 오다 · อดีต: -아/어 왔다"},
+  "form": {
+   "en": "V-아/어 오다 · past: -아/어 왔다",
+   "th": "V-아/어 오다 · อดีต: -아/어 왔다"
+  },
   "rules": [
-   {"t": "note", "en": "From the past up to now (매진해 왔다 = has devoted until now).", "th": "จากอดีตจนถึงปัจจุบัน (매진해 왔다 = ทุ่มเทมาจนถึงตอนนี้)"}
+   {
+    "t": "note",
+    "en": "From the past up to now (매진해 왔다 = has devoted until now).",
+    "th": "จากอดีตจนถึงปัจจุบัน (매진해 왔다 = ทุ่มเทมาจนถึงตอนนี้)"
+   }
   ],
   "similar": [
-   {"g": "-아/어 가다", "en": "from now into the future", "th": "จากนี้ไปในอนาคต"}
-  ]
+   {
+    "g": "-아/어 가다"
+   }
+  ],
+  "note": {
+   "en": "-아/어 오다 = have been doing (up to now)\n-아/어 가다 = from now into the future",
+   "th": "-아/어 오다 = ...มาตลอด (จนถึงปัจจุบัน)\n-아/어 가다 = จากนี้ไปในอนาคต"
+  }
  },
  "-아/어 가다": {
-  "form": {"en": "V/A-아/어 가다", "th": "V/A-아/어 가다"},
+  "form": {
+   "en": "V/A-아/어 가다",
+   "th": "V/A-아/어 가다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-아/어 오다", "en": "from the past up to now", "th": "จากอดีตจนถึงปัจจุบัน"},
-   {"g": "-고 있다", "en": "ongoing now", "th": "กำลังดำเนินอยู่ตอนนี้"}
-  ]
+   {
+    "g": "-아/어 오다"
+   },
+   {
+    "g": "-고 있다"
+   }
+  ],
+  "note": {
+   "en": "-아/어 가다 = go on ~ing (continuing)\n-아/어 오다 = from the past up to now\n-고 있다 = ongoing now",
+   "th": "-아/어 가다 = ...ไปเรื่อย ๆ (ต่อเนื่องไป)\n-아/어 오다 = จากอดีตจนถึงปัจจุบัน\n-고 있다 = กำลังดำเนินอยู่ตอนนี้"
+  }
  },
  "-아/어 나가다": {
-  "form": {"en": "V-아/어 나가다", "th": "V-아/어 나가다"},
+  "form": {
+   "en": "V-아/어 나가다",
+   "th": "V-아/어 나가다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-아/어 가다", "en": "continuing (less active)", "th": "ดำเนินต่อไป (กระตือรือร้นน้อยกว่า)"}
-  ]
+   {
+    "g": "-아/어 가다"
+   }
+  ],
+  "note": {
+   "en": "-아/어 나가다 = keep doing, carry on\n-아/어 가다 = go on ~ing (continuing, less active)",
+   "th": "-아/어 나가다 = ดำเนิน...ต่อไป\n-아/어 가다 = ...ไปเรื่อย ๆ (ต่อเนื่อง กระตือรือร้นน้อยกว่า)"
+  }
  },
  "-는지 / -(으)ㄴ지": {
-  "form": {"en": "V-는지 · past: -았/었는지 · A-(으)ㄴ지 · N-인지 · future/guess: -(으)ㄹ지", "th": "V-는지 · อดีต: -았/었는지 · A-(으)ㄴ지 · N-인지 · อนาคต/คาดเดา: -(으)ㄹ지"},
+  "form": {
+   "en": "V-는지 · past: -았/었는지 · A-(으)ㄴ지 · N-인지 · future/guess: -(으)ㄹ지",
+   "th": "V-는지 · อดีต: -았/었는지 · A-(으)ㄴ지 · N-인지 · อนาคต/คาดเดา: -(으)ㄹ지"
+  },
   "rules": [
-   {"t": "note", "en": "Usually followed by 알다 / 모르다 / 궁금하다 / 물어보다.", "th": "มักตามด้วย 알다 / 모르다 / 궁금하다 / 물어보다"}
+   {
+    "t": "note",
+    "en": "Usually followed by 알다 / 모르다 / 궁금하다 / 물어보다.",
+    "th": "มักตามด้วย 알다 / 모르다 / 궁금하다 / 물어보다"
+   }
   ],
   "similar": [
-   {"g": "-(으)ㄹ지도 모르다", "en": "might (a guess)", "th": "อาจจะ... (คาดเดา)"}
-  ]
+   {
+    "g": "-(으)ㄹ지도 모르다"
+   }
+  ],
+  "note": {
+   "en": "-는지 / -(으)ㄴ지 = whether, if (indirect question)\n-(으)ㄹ지도 모르다 = might (a guess)",
+   "th": "-는지 / -(으)ㄴ지 = ว่า...หรือไม่ (คำถามทางอ้อม)\n-(으)ㄹ지도 모르다 = อาจจะ... (คาดเดา)"
+  }
  },
  "-다가": {
-  "form": {"en": "V-다가 · short: -다 · past: -았/었다가 (did it, then changed)", "th": "V-다가 · รูปสั้น: -다 · อดีต: -았/었다가 (ทำเสร็จแล้วเปลี่ยน)"},
+  "form": {
+   "en": "V-다가 · short: -다 · past: -았/었다가 (did it, then changed)",
+   "th": "V-다가 · รูปสั้น: -다 · อดีต: -았/었다가 (ทำเสร็จแล้วเปลี่ยน)"
+  },
   "rules": [
-   {"t": "no", "en": "Both parts must have the same subject.", "th": "สองส่วนต้องมีประธานเดียวกัน"},
-   {"t": "note", "en": "-다가 = stopped in the middle (가다가 = on the way); -았/었다가 = finished, then changed (샀다가 환불했다).", "th": "-다가 = หยุดกลางคัน (가다가 = ระหว่างทาง); -았/었다가 = ทำเสร็จแล้วเปลี่ยน (샀다가 환불했다)"}
+   {
+    "t": "no",
+    "en": "Both parts must have the same subject.",
+    "th": "สองส่วนต้องมีประธานเดียวกัน"
+   },
+   {
+    "t": "note",
+    "en": "-다가 = stopped in the middle (가다가 = on the way); -았/었다가 = finished, then changed (샀다가 환불했다).",
+    "th": "-다가 = หยุดกลางคัน (가다가 = ระหว่างทาง); -았/었다가 = ทำเสร็จแล้วเปลี่ยน (샀다가 환불했다)"
+   }
   ],
   "similar": [
-   {"g": "-는 길에", "en": "on the way (with 가다/오다)", "th": "ระหว่างทาง (กับ 가다/오다)"},
-   {"g": "-는 동안(에)", "en": "during", "th": "ในระหว่างที่..."}
-  ]
+   {
+    "g": "-는 길에"
+   },
+   {
+    "g": "-는 동안(에)"
+   }
+  ],
+  "note": {
+   "en": "-다가 = while doing ~, then (action changes or is interrupted)\n-는 길에 = on the way (with 가다/오다)\n-는 동안(에) = during",
+   "th": "-다가 = ...อยู่แล้วก็... (เปลี่ยนการกระทำ/ถูกขัดจังหวะ)\n-는 길에 = ระหว่างทาง (กับ 가다/오다)\n-는 동안(에) = ในระหว่างที่..."
+  }
  },
  "-는 등": {
-  "form": {"en": "N 등 · V-는 등 · V-(으)ㄴ 등 (past)", "th": "N 등 · V-는 등 · V-(으)ㄴ 등 (อดีต)"},
+  "form": {
+   "en": "N 등 · V-는 등 · V-(으)ㄴ 등 (past)",
+   "th": "N 등 · V-는 등 · V-(으)ㄴ 등 (อดีต)"
+  },
   "rules": [
-   {"t": "note", "en": "Lists examples, then usually a summary word: 사진을 찍는 등의 행동 (actions such as taking photos).", "th": "ยกตัวอย่าง แล้วมักตามด้วยคำสรุป: 사진을 찍는 등의 행동 (การกระทำ เช่น ถ่ายรูป)"}
+   {
+    "t": "note",
+    "en": "Lists examples, then usually a summary word: 사진을 찍는 등의 행동 (actions such as taking photos).",
+    "th": "ยกตัวอย่าง แล้วมักตามด้วยคำสรุป: 사진을 찍는 등의 행동 (การกระทำ เช่น ถ่ายรูป)"
+   }
   ],
   "similar": [
-   {"g": "-거나", "en": "or", "th": "หรือ"}
-  ]
+   {
+    "g": "-거나"
+   }
+  ],
+  "note": {
+   "en": "-는 등 = and so on; such as\n-거나 = or",
+   "th": "-는 등 = ...เป็นต้น\n-거나 = หรือ"
+  }
  },
  "-아/어 놓다": {
-  "form": {"en": "V-아/어 놓다", "th": "V-아/어 놓다"},
+  "form": {
+   "en": "V-아/어 놓다",
+   "th": "V-아/어 놓다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-아/어 두다", "en": "almost the same; 두다 stresses keeping it for later", "th": "เกือบเหมือนกัน; 두다 เน้นเก็บไว้ใช้ภายหลัง"}
-  ]
+   {
+    "g": "-아/어 두다"
+   }
+  ],
+  "note": {
+   "en": "-아/어 놓다 = do it and leave it in that state\n-아/어 두다 = do in advance / do it for later",
+   "th": "-아/어 놓다 = ทำไว้แล้วคงสภาพนั้นไว้\n-아/어 두다 = ทำไว้ล่วงหน้า / ทำไว้เพื่อภายหลัง"
+  }
  },
  "-아/어 두다": {
-  "form": {"en": "V-아/어 두다", "th": "V-아/어 두다"},
+  "form": {
+   "en": "V-아/어 두다",
+   "th": "V-아/어 두다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-아/어 놓다", "en": "almost the same", "th": "เกือบเหมือนกัน"}
-  ]
+   {
+    "g": "-아/어 놓다"
+   }
+  ],
+  "note": {
+   "en": "-아/어 두다 = do in advance / do it for later\n-아/어 놓다 = do it and leave it in that state",
+   "th": "-아/어 두다 = ทำไว้ล่วงหน้า / ทำไว้เพื่อภายหลัง\n-아/어 놓다 = ทำไว้แล้วคงสภาพนั้นไว้"
+  }
  },
  "-고자 (하다)": {
-  "form": {"en": "V-고자 · V-고자 하다", "th": "V-고자 · V-고자 하다"},
+  "form": {
+   "en": "V-고자 · V-고자 하다",
+   "th": "V-고자 · V-고자 하다"
+  },
   "rules": [
-   {"t": "note", "en": "Formal and written. Both parts have the same subject.", "th": "ทางการ ภาษาเขียน สองส่วนมีประธานเดียวกัน"}
+   {
+    "t": "note",
+    "en": "Formal and written. Both parts have the same subject.",
+    "th": "ทางการ ภาษาเขียน สองส่วนมีประธานเดียวกัน"
+   }
   ],
   "similar": [
-   {"g": "-기 위해(서)", "en": "in order to", "th": "เพื่อ...", "exam": "round 91 Q3"},
-   {"g": "-(으)려고", "en": "in order to (spoken)", "th": "เพื่อจะ... (ภาษาพูด)"}
-  ]
+   {
+    "g": "-기 위해(서)",
+    "exam": "round 91 Q3"
+   },
+   {
+    "g": "-(으)려고"
+   }
+  ],
+  "note": {
+   "en": "-고자 (하다) = in order to; wish to (formal)\n-기 위해(서) = in order to\n-(으)려고 = in order to (spoken)",
+   "th": "-고자 (하다) = เพื่อ... / ต้องการ... (ภาษาทางการ)\n-기 위해(서) = เพื่อ...\n-(으)려고 = เพื่อจะ... (ภาษาพูด)"
+  }
  },
  "뿐만 아니라 / (이/가) 아니라": {
-  "form": {"en": "N뿐만 아니라 · V/A-(으)ㄹ 뿐만 아니라 · N이/가 아니라 (not N, but …)", "th": "N뿐만 아니라 · V/A-(으)ㄹ 뿐만 아니라 · N이/가 아니라 (ไม่ใช่ N แต่เป็น…)"},
+  "form": {
+   "en": "N뿐만 아니라 · V/A-(으)ㄹ 뿐만 아니라 · N이/가 아니라 (not N, but …)",
+   "th": "N뿐만 아니라 · V/A-(으)ㄹ 뿐만 아니라 · N이/가 아니라 (ไม่ใช่ N แต่เป็น…)"
+  },
   "rules": [],
   "similar": [
-   {"g": "-는 데다가", "en": "on top of ~ (adds more)", "th": "นอกจาก...แล้วยัง..."},
-   {"g": "N도", "en": "also", "th": "...ด้วย"}
-  ]
+   {
+    "g": "-는 데다가"
+   },
+   {
+    "g": "N도"
+   }
+  ],
+  "note": {
+   "en": "뿐만 아니라 / (이/가) 아니라 = not only ~ but also / not A but B\n-는 데다가 = on top of ~ (adds more)\nN도 = also, too",
+   "th": "뿐만 아니라 / (이/가) 아니라 = ไม่เพียงแต่...แต่ยัง... / ไม่ใช่...แต่เป็น...\n-는 데다가 = นอกจาก...แล้วยัง...\nN도 = ...ด้วย / ...เช่นกัน"
+  }
  },
  "-다 보면 / -다 보니": {
-  "form": {"en": "V-다(가) 보면 · V-다(가) 보니(까)", "th": "V-다(가) 보면 · V-다(가) 보니(까)"},
+  "form": {
+   "en": "V-다(가) 보면 · V-다(가) 보니(까)",
+   "th": "V-다(가) 보면 · V-다(가) 보니(까)"
+  },
   "rules": [
-   {"t": "note", "en": "-다 보면 → a result that will come (general/future); -다 보니 → a result that already happened.", "th": "-다 보면 → ผลที่จะเกิดขึ้น (ทั่วไป/อนาคต); -다 보니 → ผลที่เกิดขึ้นแล้ว"}
+   {
+    "t": "note",
+    "en": "-다 보면 → a result that will come (general/future); -다 보니 → a result that already happened.",
+    "th": "-다 보면 → ผลที่จะเกิดขึ้น (ทั่วไป/อนาคต); -다 보니 → ผลที่เกิดขึ้นแล้ว"
+   }
   ],
   "similar": [
-   {"g": "-(으)면", "en": "if (no 'keep doing' meaning)", "th": "ถ้า... (ไม่มีความหมาย 'ทำไปเรื่อย ๆ')"}
-  ]
+   {
+    "g": "-(으)면"
+   }
+  ],
+  "note": {
+   "en": "-다 보면 / -다 보니 = if you keep doing (you will find) / as I kept doing (I realised)\n-(으)면 = if (no 'keep doing' meaning)",
+   "th": "-다 보면 / -다 보니 = ถ้า...ไปเรื่อย ๆ ก็จะ... / พอ...ไปเรื่อย ๆ ก็เลย...\n-(으)면 = ถ้า... (ไม่มีความหมาย 'ทำไปเรื่อย ๆ')"
+  }
  },
  "-(으)러": {
-  "form": {"en": "V-으러 (final consonant) · -러 (no final consonant or ㄹ) + 가다 / 오다 / 다니다", "th": "V-으러 (มีตัวสะกด) · -러 (ไม่มีตัวสะกด หรือ ㄹ) + 가다 / 오다 / 다니다"},
+  "form": {
+   "en": "V-으러 (final consonant) · -러 (no final consonant or ㄹ) + 가다 / 오다 / 다니다",
+   "th": "V-으러 (มีตัวสะกด) · -러 (ไม่มีตัวสะกด หรือ ㄹ) + 가다 / 오다 / 다니다"
+  },
   "rules": [
-   {"t": "no", "en": "Only with a movement verb after it (가다, 오다, 다니다, 나가다, 모여들다).", "th": "ต้องตามด้วยกริยาการเคลื่อนที่เท่านั้น (가다, 오다, 다니다, 나가다, 모여들다)"}
+   {
+    "t": "no",
+    "en": "Only with a movement verb after it (가다, 오다, 다니다, 나가다, 모여들다).",
+    "th": "ต้องตามด้วยกริยาการเคลื่อนที่เท่านั้น (가다, 오다, 다니다, 나가다, 모여들다)"
+   }
   ],
   "similar": [
-   {"g": "-(으)려고", "en": "in order to (with any verb)", "th": "เพื่อจะ... (ใช้กับกริยาใดก็ได้)"}
-  ]
+   {
+    "g": "-(으)려고"
+   }
+  ],
+  "note": {
+   "en": "-(으)러 = (go / come) in order to\n-(으)려고 = in order to (with any verb)",
+   "th": "-(으)러 = ไป/มาเพื่อ...\n-(으)려고 = เพื่อจะ... (ใช้กับกริยาใดก็ได้)"
+  }
  },
  "-(으)ㅁ에도 (불구하고)": {
-  "form": {"en": "V/A-(으)ㅁ에도 (불구하고) · past: -았/었음에도 · N에도 불구하고", "th": "V/A-(으)ㅁ에도 (불구하고) · อดีต: -았/었음에도 · N에도 불구하고"},
+  "form": {
+   "en": "V/A-(으)ㅁ에도 (불구하고) · past: -았/었음에도 · N에도 불구하고",
+   "th": "V/A-(으)ㅁ에도 (불구하고) · อดีต: -았/었음에도 · N에도 불구하고"
+  },
   "rules": [
-   {"t": "note", "en": "Formal and written.", "th": "ทางการ ภาษาเขียน"}
+   {
+    "t": "note",
+    "en": "Formal and written.",
+    "th": "ทางการ ภาษาเขียน"
+   }
   ],
   "similar": [
-   {"g": "-(으)ㄴ/는데도", "en": "even though (spoken)", "th": "ทั้งที่... (ภาษาพูด)"},
-   {"g": "-지만", "en": "but", "th": "แต่"}
-  ]
+   {
+    "g": "-(으)ㄴ/는데도"
+   },
+   {
+    "g": "-지만"
+   }
+  ],
+  "note": {
+   "en": "-(으)ㅁ에도 (불구하고) = despite\n-(으)ㄴ/는데도 = even though (spoken)\n-지만 = but",
+   "th": "-(으)ㅁ에도 (불구하고) = ทั้ง ๆ ที่... / แม้ว่า...\n-(으)ㄴ/는데도 = ทั้งที่... (ภาษาพูด)\n-지만 = แต่"
+  }
  },
  "-는데 / -(으)ㄴ데": {
-  "form": {"en": "V-는데 · A-(으)ㄴ데 · N-인데 · past: -았/었는데", "th": "V-는데 · A-(으)ㄴ데 · N-인데 · อดีต: -았/었는데"},
+  "form": {
+   "en": "V-는데 · A-(으)ㄴ데 · N-인데 · past: -았/었는데",
+   "th": "V-는데 · A-(으)ㄴ데 · N-인데 · อดีต: -았/었는데"
+  },
   "rules": [
-   {"t": "note", "en": "Gives background before a question, request or contrast.", "th": "ให้ข้อมูลพื้นหลังก่อนคำถาม คำขอ หรือข้อขัดแย้ง"}
+   {
+    "t": "note",
+    "en": "Gives background before a question, request or contrast.",
+    "th": "ให้ข้อมูลพื้นหลังก่อนคำถาม คำขอ หรือข้อขัดแย้ง"
+   }
   ],
   "similar": [
-   {"g": "-지만", "en": "but (clear contrast)", "th": "แต่ (ขัดแย้งชัดเจน)"}
-  ]
+   {
+    "g": "-지만"
+   }
+  ],
+  "note": {
+   "en": "-는데 / -(으)ㄴ데 = and / but (giving background)\n-지만 = but (clear contrast)",
+   "th": "-는데 / -(으)ㄴ데 = ...แต่ / ...และ (ให้ข้อมูลพื้นหลัง)\n-지만 = แต่ (ขัดแย้งชัดเจน)"
+  }
  },
  "-아/어 내다": {
-  "form": {"en": "V-아/어 내다 (참다 → 참아 내다, 이기다 → 이겨 내다)", "th": "V-아/어 내다 (참다 → 참아 내다, 이기다 → 이겨 내다)"},
+  "form": {
+   "en": "V-아/어 내다 (참다 → 참아 내다, 이기다 → 이겨 내다)",
+   "th": "V-아/어 내다 (참다 → 참아 내다, 이기다 → 이겨 내다)"
+  },
   "rules": [],
   "similar": [
-   {"g": "-고 말다", "en": "end up ~ (often regret)", "th": "...ไปจนได้ (มักเสียดาย)"}
-  ]
+   {
+    "g": "-고 말다"
+   }
+  ],
+  "note": {
+   "en": "-아/어 내다 = manage to; do through to the end\n-고 말다 = end up ~ (often regret)",
+   "th": "-아/어 내다 = ...จนสำเร็จ / ...ออกมาได้\n-고 말다 = ...ไปจนได้ (มักเสียดาย)"
+  }
  },
  "-(으)니": {
-  "form": {"en": "V/A-으니 (final consonant) · -니 (no final consonant or ㄹ) · also -(으)니까", "th": "V/A-으니 (มีตัวสะกด) · -니 (ไม่มีตัวสะกด หรือ ㄹ) · หรือ -(으)니까"},
+  "form": {
+   "en": "V/A-으니 (final consonant) · -니 (no final consonant or ㄹ) · also -(으)니까",
+   "th": "V/A-으니 (มีตัวสะกด) · -니 (ไม่มีตัวสะกด หรือ ㄹ) · หรือ -(으)니까"
+  },
   "rules": [
-   {"t": "note", "en": "Two meanings: reason (commands allowed after it) and discovery (가 보니 = when I went, I found).", "th": "สองความหมาย: เหตุผล (ตามด้วยคำสั่งได้) และการค้นพบ (가 보니 = พอไปดูก็พบว่า)"}
+   {
+    "t": "note",
+    "en": "Two meanings: reason (commands allowed after it) and discovery (가 보니 = when I went, I found).",
+    "th": "สองความหมาย: เหตุผล (ตามด้วยคำสั่งได้) และการค้นพบ (가 보니 = พอไปดูก็พบว่า)"
+   }
   ],
   "similar": [
-   {"g": "-아/어서", "en": "reason (no commands after it)", "th": "เหตุผล (ตามด้วยคำสั่งไม่ได้)"}
-  ]
+   {
+    "g": "-아/어서"
+   }
+  ],
+  "note": {
+   "en": "-(으)니 = since, as; when (and then found)\n-아/어서 = reason (no commands after it)",
+   "th": "-(으)니 = เพราะ... / พอ...ก็พบว่า...\n-아/어서 = เหตุผล (ตามด้วยคำสั่งไม่ได้)"
+  }
  },
  "-자": {
-  "form": {"en": "V-자", "th": "V-자"},
+  "form": {
+   "en": "V-자",
+   "th": "V-자"
+  },
   "rules": [
-   {"t": "note", "en": "Written: when A happened, B followed (계속 이어지자 = as it kept going on).", "th": "ภาษาเขียน: พอ A เกิดขึ้น B ก็ตามมา (계속 이어지자 = พอยังคงเกิดต่อเนื่อง)"},
-   {"t": "no", "en": "No command or suggestion after it.", "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้"}
+   {
+    "t": "note",
+    "en": "Written: when A happened, B followed (계속 이어지자 = as it kept going on).",
+    "th": "ภาษาเขียน: พอ A เกิดขึ้น B ก็ตามมา (계속 이어지자 = พอยังคงเกิดต่อเนื่อง)"
+   },
+   {
+    "t": "no",
+    "en": "No command or suggestion after it.",
+    "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้"
+   }
   ],
   "similar": [
-   {"g": "-자마자", "en": "as soon as (very quick)", "th": "ทันทีที่... (เร็วมาก)"}
-  ]
+   {
+    "g": "-자마자"
+   }
+  ],
+  "note": {
+   "en": "-자 = as soon as; when (formal, written)\n-자마자 = as soon as (very quick)",
+   "th": "-자 = ทันทีที่... / พอ...ก็...\n-자마자 = ทันทีที่... (เร็วมาก)"
+  }
  },
  "-아/어 하다": {
-  "form": {"en": "Feeling adjective → verb: 좋다 → 좋아하다 · 슬프다 → 슬퍼하다 · 싫다 → 싫어하다", "th": "คุณศัพท์ความรู้สึก → กริยา: 좋다 → 좋아하다 · 슬프다 → 슬퍼하다 · 싫다 → 싫어하다"},
+  "form": {
+   "en": "Feeling adjective → verb: 좋다 → 좋아하다 · 슬프다 → 슬퍼하다 · 싫다 → 싫어하다",
+   "th": "คุณศัพท์ความรู้สึก → กริยา: 좋다 → 좋아하다 · 슬프다 → 슬퍼하다 · 싫다 → 싫어하다"
+  },
   "rules": [
-   {"t": "note", "en": "Describes another person's feelings (그는 슬퍼한다), while the plain adjective is for your own (나는 슬프다).", "th": "ใช้บรรยายความรู้สึกของผู้อื่น (그는 슬퍼한다) ส่วนคุณศัพท์ธรรมดาใช้กับตนเอง (나는 슬프다)"}
+   {
+    "t": "note",
+    "en": "Describes another person's feelings (그는 슬퍼한다), while the plain adjective is for your own (나는 슬프다).",
+    "th": "ใช้บรรยายความรู้สึกของผู้อื่น (그는 슬퍼한다) ส่วนคุณศัพท์ธรรมดาใช้กับตนเอง (나는 슬프다)"
+   }
   ],
   "similar": [
-   {"g": "-고 싶어 하다", "en": "he / she wants to", "th": "เขาอยาก..."}
-  ]
+   {
+    "g": "-고 싶어 하다"
+   }
+  ],
+  "note": {
+   "en": "-아/어 하다 = shows feelings or habits: 좋아하다, 즐겨 하다\n-고 싶어 하다 = he / she wants to",
+   "th": "-아/어 하다 = แสดงความรู้สึก/ความชอบ เช่น ชอบ...\n-고 싶어 하다 = เขาอยาก..."
+  }
  },
  "-더라도": {
-  "form": {"en": "V/A-더라도 · N-(이)더라도", "th": "V/A-더라도 · N-(이)더라도"},
+  "form": {
+   "en": "V/A-더라도 · N-(이)더라도",
+   "th": "V/A-더라도 · N-(이)더라도"
+  },
   "rules": [],
   "similar": [
-   {"g": "-아/어도", "en": "even if (softer)", "th": "ถึงแม้... (เบากว่า)"}
-  ]
+   {
+    "g": "-아/어도"
+   }
+  ],
+  "note": {
+   "en": "-더라도 = even if (strong)\n-아/어도 = even if (softer, everyday)",
+   "th": "-더라도 = ถึงแม้จะ...ก็ตาม\n-아/어도 = ถึงแม้... (เบากว่า ใช้ทั่วไป)"
+  }
  },
  "-고 싶다": {
-  "form": {"en": "V-고 싶다 · 3rd person: -고 싶어 하다", "th": "V-고 싶다 · บุรุษที่ 3: -고 싶어 하다"},
+  "form": {
+   "en": "V-고 싶다 · 3rd person: -고 싶어 하다",
+   "th": "V-고 싶다 · บุรุษที่ 3: -고 싶어 하다"
+  },
   "rules": [
-   {"t": "note", "en": "For another person's wish use -고 싶어 하다.", "th": "ถ้าเป็นความต้องการของผู้อื่นใช้ -고 싶어 하다"}
+   {
+    "t": "note",
+    "en": "For another person's wish use -고 싶어 하다.",
+    "th": "ถ้าเป็นความต้องการของผู้อื่นใช้ -고 싶어 하다"
+   }
   ],
   "similar": [
-   {"g": "-았/었으면 좋겠다", "en": "I hope / wish", "th": "อยากให้... / หวังว่า..."}
-  ]
+   {
+    "g": "-았/었으면 좋겠다"
+   }
+  ],
+  "note": {
+   "en": "-고 싶다 = want to\n-았/었으면 좋겠다 = I hope / wish",
+   "th": "-고 싶다 = อยาก...\n-았/었으면 좋겠다 = อยากให้... / หวังว่า..."
+  }
  },
  "-기도 하다": {
-  "form": {"en": "V/A-기도 하다", "th": "V/A-기도 하다"},
+  "form": {
+   "en": "V/A-기도 하다",
+   "th": "V/A-기도 하다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-(으)ㄹ 때도 있다", "en": "sometimes", "th": "บางครั้งก็..."}
-  ]
+   {
+    "g": "-(으)ㄹ 때도 있다"
+   }
+  ],
+  "note": {
+   "en": "-기도 하다 = also; sometimes (do)\n-(으)ㄹ 때도 있다 = sometimes",
+   "th": "-기도 하다 = ...ด้วย / บางครั้งก็...\n-(으)ㄹ 때도 있다 = บางครั้งก็..."
+  }
  },
  "-(으)ㅁ으로써": {
-  "form": {"en": "V-(으)ㅁ으로써", "th": "V-(으)ㅁ으로써"},
+  "form": {
+   "en": "V-(으)ㅁ으로써",
+   "th": "V-(으)ㅁ으로써"
+  },
   "rules": [
-   {"t": "note", "en": "Formal written: the method or means (부착하게 만듦으로써 = by making it stick).", "th": "ภาษาเขียนทางการ: วิธีการ (부착하게 만듦으로써 = โดยการทำให้ติด)"}
+   {
+    "t": "note",
+    "en": "Formal written: the method or means (부착하게 만듦으로써 = by making it stick).",
+    "th": "ภาษาเขียนทางการ: วิธีการ (부착하게 만듦으로써 = โดยการทำให้ติด)"
+   }
   ],
   "similar": [
-   {"g": "N-(으)로", "en": "by means of N", "th": "โดยใช้ N"}
-  ]
+   {
+    "g": "N-(으)로"
+   }
+  ],
+  "note": {
+   "en": "-(으)ㅁ으로써 = by (doing)\nN-(으)로 = by means of N",
+   "th": "-(으)ㅁ으로써 = โดยการ...\nN-(으)로 = โดยใช้ N"
+  }
  },
  "-자마자": {
-  "form": {"en": "V-자마자", "th": "V-자마자"},
+  "form": {
+   "en": "V-자마자",
+   "th": "V-자마자"
+  },
   "rules": [
-   {"t": "no", "en": "No past tense before it (갔자마자 ✗).", "th": "ห้ามใส่อดีตข้างหน้า (갔자마자 ✗)"}
+   {
+    "t": "no",
+    "en": "No past tense before it (갔자마자 ✗).",
+    "th": "ห้ามใส่อดีตข้างหน้า (갔자마자 ✗)"
+   }
   ],
   "similar": [
-   {"g": "-기 무섭게", "en": "as soon as (very fast, written)", "th": "ทันทีที่... (เร็วมาก ภาษาเขียน)"},
-   {"g": "-는 대로", "en": "as soon as (future plans, requests)", "th": "ทันทีที่... (แผนในอนาคต คำขอ)"}
-  ]
+   {
+    "g": "-기 무섭게"
+   },
+   {
+    "g": "-는 대로"
+   }
+  ],
+  "note": {
+   "en": "-자마자 = as soon as\n-기 무섭게 = as soon as (very fast, written)\n-는 대로 = as soon as (future plans, requests)",
+   "th": "-자마자 = ทันทีที่...\n-기 무섭게 = ทันทีที่... (เร็วมาก ภาษาเขียน)\n-는 대로 = ทันทีที่... (แผนในอนาคต คำขอ)"
+  }
  },
  "-고 나서": {
-  "form": {"en": "V-고 나서", "th": "V-고 나서"},
+  "form": {
+   "en": "V-고 나서",
+   "th": "V-고 나서"
+  },
   "rules": [],
   "similar": [
-   {"g": "-(으)ㄴ 후에", "en": "after", "th": "หลังจาก..."}
-  ]
+   {
+    "g": "-(으)ㄴ 후에"
+   }
+  ],
+  "note": {
+   "en": "-고 나서 = after (finishing)\n-(으)ㄴ 후에 = after",
+   "th": "-고 나서 = หลังจาก...เสร็จแล้ว\n-(으)ㄴ 후에 = หลังจาก..."
+  }
  },
  "-(으)ㄹ 뻔하다": {
-  "form": {"en": "V-(으)ㄹ 뻔했다 (almost always in the past)", "th": "V-(으)ㄹ 뻔했다 (เกือบทุกครั้งใช้รูปอดีต)"},
+  "form": {
+   "en": "V-(으)ㄹ 뻔했다 (almost always in the past)",
+   "th": "V-(으)ㄹ 뻔했다 (เกือบทุกครั้งใช้รูปอดีต)"
+  },
   "rules": [
-   {"t": "note", "en": "Something almost happened but did not. Often with 하마터면: 하마터면 넘어질 뻔했다.", "th": "บางอย่างเกือบเกิดแต่ไม่เกิด มักใช้กับ 하마터면: 하마터면 넘어질 뻔했다"}
+   {
+    "t": "note",
+    "en": "Something almost happened but did not. Often with 하마터면: 하마터면 넘어질 뻔했다.",
+    "th": "บางอย่างเกือบเกิดแต่ไม่เกิด มักใช้กับ 하마터면: 하마터면 넘어질 뻔했다"
+   }
   ],
-  "similar": []
+  "similar": [],
+  "note": {
+   "en": "",
+   "th": ""
+  }
  },
  "-(으)ㄴ 척하다": {
-  "form": {"en": "V-는 척하다 (present) · V-(으)ㄴ 척하다 (past / state) · A-(으)ㄴ 척하다 · N-인 척하다", "th": "V-는 척하다 (ปัจจุบัน) · V-(으)ㄴ 척하다 (อดีต / สภาพ) · A-(으)ㄴ 척하다 · N-인 척하다"},
+  "form": {
+   "en": "V-는 척하다 (present) · V-(으)ㄴ 척하다 (past / state) · A-(으)ㄴ 척하다 · N-인 척하다",
+   "th": "V-는 척하다 (ปัจจุบัน) · V-(으)ㄴ 척하다 (อดีต / สภาพ) · A-(으)ㄴ 척하다 · N-인 척하다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-(으)ㄴ 체하다", "en": "same meaning", "th": "ความหมายเดียวกัน"}
-  ]
+   {
+    "g": "-(으)ㄴ 체하다"
+   }
+  ],
+  "note": {
+   "en": "-(으)ㄴ 척하다 = pretend\n-(으)ㄴ 체하다 = pretend (same meaning)",
+   "th": "-(으)ㄴ 척하다 = แกล้งทำเป็น...\n-(으)ㄴ 체하다 = แกล้งทำเป็น... (ความหมายเดียวกัน)"
+  }
  },
  "-(으)ㄴ 탓에": {
-  "form": {"en": "V-는 탓에 · V-(으)ㄴ 탓에 (past) · A-(으)ㄴ 탓에 · N 탓에", "th": "V-는 탓에 · V-(으)ㄴ 탓에 (อดีต) · A-(으)ㄴ 탓에 · N 탓에"},
+  "form": {
+   "en": "V-는 탓에 · V-(으)ㄴ 탓에 (past) · A-(으)ㄴ 탓에 · N 탓에",
+   "th": "V-는 탓에 · V-(으)ㄴ 탓에 (อดีต) · A-(으)ㄴ 탓에 · N 탓에"
+  },
   "rules": [
-   {"t": "note", "en": "The result is negative; it blames the cause.", "th": "ผลเป็นเชิงลบ และโทษสาเหตุ"}
+   {
+    "t": "note",
+    "en": "The result is negative; it blames the cause.",
+    "th": "ผลเป็นเชิงลบ และโทษสาเหตุ"
+   }
   ],
   "similar": [
-   {"g": "-는 바람에", "en": "because (unexpected, bad result)", "th": "เพราะ... (ไม่คาดคิด ผลไม่ดี)", "exam": "round 96 Q3"},
-   {"g": "-기 때문에", "en": "because (neutral)", "th": "เพราะ... (เป็นกลาง)"}
-  ]
+   {
+    "g": "-는 바람에",
+    "exam": "round 96 Q3"
+   },
+   {
+    "g": "-기 때문에"
+   }
+  ],
+  "note": {
+   "en": "-(으)ㄴ 탓에 = because of (negative result, blame)\n-는 바람에 = because (unexpected, bad result)\n-기 때문에 = because (neutral; the result can be good)",
+   "th": "-(으)ㄴ 탓에 = เพราะ... (ผลเสีย / โทษว่าเป็นสาเหตุ)\n-는 바람에 = เพราะ... (ไม่คาดคิด ผลไม่ดี)\n-기 때문에 = เพราะ... (เป็นกลาง ผลอาจดีก็ได้)"
+  }
  },
  "-곤 하다": {
-  "form": {"en": "V-곤 하다 · past: -곤 했다", "th": "V-곤 하다 · อดีต: -곤 했다"},
+  "form": {
+   "en": "V-곤 하다 · past: -곤 했다",
+   "th": "V-곤 하다 · อดีต: -곤 했다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-(으)ㄹ 때가 많다", "en": "often", "th": "มักจะ... บ่อย ๆ"}
-  ]
+   {
+    "g": "-(으)ㄹ 때가 많다"
+   }
+  ],
+  "note": {
+   "en": "-곤 하다 = used to (habit)\n-(으)ㄹ 때가 많다 = often",
+   "th": "-곤 하다 = มักจะ... (เป็นนิสัย)\n-(으)ㄹ 때가 많다 = มักจะ... บ่อย ๆ"
+  }
  },
  "-기로 하다": {
-  "form": {"en": "V-기로 하다 · past: -기로 했다", "th": "V-기로 하다 · อดีต: -기로 했다"},
+  "form": {
+   "en": "V-기로 하다 · past: -기로 했다",
+   "th": "V-기로 하다 · อดีต: -기로 했다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-(으)려고 하다", "en": "intend to", "th": "ตั้งใจจะ..."}
-  ]
+   {
+    "g": "-(으)려고 하다"
+   }
+  ],
+  "note": {
+   "en": "-기로 하다 = decide to\n-(으)려고 하다 = intend to",
+   "th": "-기로 하다 = ตัดสินใจว่าจะ...\n-(으)려고 하다 = ตั้งใจจะ..."
+  }
  },
  "-(으)ㄴ 적이 있다/없다": {
-  "form": {"en": "V-(으)ㄴ 적이 있다/없다 · try-experience: -아/어 본 적이 있다", "th": "V-(으)ㄴ 적이 있다/없다 · เคยลอง: -아/어 본 적이 있다"},
+  "form": {
+   "en": "V-(으)ㄴ 적이 있다/없다 · try-experience: -아/어 본 적이 있다",
+   "th": "V-(으)ㄴ 적이 있다/없다 · เคยลอง: -아/어 본 적이 있다"
+  },
   "rules": [
-   {"t": "no", "en": "Not for things done every day (밥을 먹은 적이 있다 sounds strange).", "th": "ไม่ใช้กับสิ่งที่ทำทุกวัน (밥을 먹은 적이 있다 ฟังดูแปลก)"}
+   {
+    "t": "no",
+    "en": "Not for things done every day (밥을 먹은 적이 있다 sounds strange).",
+    "th": "ไม่ใช้กับสิ่งที่ทำทุกวัน (밥을 먹은 적이 있다 ฟังดูแปลก)"
+   }
   ],
   "similar": [
-   {"g": "-아/어 보다", "en": "try (experience)", "th": "ลอง... (ประสบการณ์)"}
-  ]
+   {
+    "g": "-아/어 보다"
+   }
+  ],
+  "note": {
+   "en": "-(으)ㄴ 적이 있다/없다 = have (never) done before\n-아/어 보다 = try (experience)",
+   "th": "-(으)ㄴ 적이 있다/없다 = เคย... / ไม่เคย...\n-아/어 보다 = ลอง... (ประสบการณ์)"
+  }
  },
  "-(으)므로": {
-  "form": {"en": "V/A-으므로 (final consonant) · -므로 (no final consonant) · N-이므로", "th": "V/A-으므로 (มีตัวสะกด) · -므로 (ไม่มีตัวสะกด) · N-이므로"},
+  "form": {
+   "en": "V/A-으므로 (final consonant) · -므로 (no final consonant) · N-이므로",
+   "th": "V/A-으므로 (มีตัวสะกด) · -므로 (ไม่มีตัวสะกด) · N-이므로"
+  },
   "rules": [
-   {"t": "note", "en": "Formal written reason.", "th": "เหตุผลแบบภาษาเขียนทางการ"}
+   {
+    "t": "note",
+    "en": "Formal written reason.",
+    "th": "เหตุผลแบบภาษาเขียนทางการ"
+   }
   ],
   "similar": [
-   {"g": "-기 때문에 / -기 때문이다", "en": "because", "th": "เพราะ..."}
-  ]
+   {
+    "g": "-기 때문에 / -기 때문이다"
+   }
+  ],
+  "note": {
+   "en": "-(으)므로 = because (formal, written)\n-기 때문에 / -기 때문이다 = because",
+   "th": "-(으)므로 = เนื่องจาก... (ภาษาเขียน)\n-기 때문에 / -기 때문이다 = เพราะ..."
+  }
  },
  "-(으)ㄴ 지 (시간이 되다)": {
-  "form": {"en": "V-(으)ㄴ 지 + time + 되다 / 지나다 / 넘다", "th": "V-(으)ㄴ 지 + ระยะเวลา + 되다 / 지나다 / 넘다"},
+  "form": {
+   "en": "V-(으)ㄴ 지 + time + 되다 / 지나다 / 넘다",
+   "th": "V-(으)ㄴ 지 + ระยะเวลา + 되다 / 지나다 / 넘다"
+  },
   "rules": [
-   {"t": "note", "en": "Space before 지: 온 지 일 년 (one year since coming). Without a space, -(으)ㄴ지 means 'whether'.", "th": "มีวรรคก่อน 지: 온 지 일 년 (มาได้หนึ่งปีแล้ว) ถ้าไม่มีวรรค -(으)ㄴ지 แปลว่า 'หรือไม่'"}
+   {
+    "t": "note",
+    "en": "Space before 지: 온 지 일 년 (one year since coming). Without a space, -(으)ㄴ지 means 'whether'.",
+    "th": "มีวรรคก่อน 지: 온 지 일 년 (มาได้หนึ่งปีแล้ว) ถ้าไม่มีวรรค -(으)ㄴ지 แปลว่า 'หรือไม่'"
+   }
   ],
   "similar": [
-   {"g": "-(으)ㄴ 후로", "en": "since (after)", "th": "ตั้งแต่...เป็นต้นมา"}
-  ]
+   {
+    "g": "-(으)ㄴ 후로"
+   }
+  ],
+  "note": {
+   "en": "-(으)ㄴ 지 (시간이 되다) = (time) since\n-(으)ㄴ 후로 = since (after)",
+   "th": "-(으)ㄴ 지 (시간이 되다) = ตั้งแต่...มาเป็นเวลา... (ระยะเวลา)\n-(으)ㄴ 후로 = ตั้งแต่...เป็นต้นมา"
+  }
  },
  "-(으)ㄹ 리가 없다": {
-  "form": {"en": "V/A-(으)ㄹ 리가 없다 · past: -았/었을 리가 없다", "th": "V/A-(으)ㄹ 리가 없다 · อดีต: -았/었을 리가 없다"},
+  "form": {
+   "en": "V/A-(으)ㄹ 리가 없다 · past: -았/었을 리가 없다",
+   "th": "V/A-(으)ㄹ 리가 없다 · อดีต: -았/었을 리가 없다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-(으)ㄹ 수도 있다", "en": "opposite: it is possible", "th": "ตรงข้าม: เป็นไปได้"}
-  ]
+   {
+    "g": "-(으)ㄹ 수도 있다"
+   }
+  ],
+  "note": {
+   "en": "-(으)ㄹ 리가 없다 = there is no way that\n-(으)ㄹ 수도 있다 = might, it is possible (the opposite idea)",
+   "th": "-(으)ㄹ 리가 없다 = ไม่มีทางที่จะ...\n-(으)ㄹ 수도 있다 = อาจจะ... เป็นไปได้ (ความหมายตรงข้าม)"
+  }
  },
  "-기만 하면": {
-  "form": {"en": "V-기만 하면", "th": "V-기만 하면"},
+  "form": {
+   "en": "V-기만 하면",
+   "th": "V-기만 하면"
+  },
   "rules": [],
   "similar": [
-   {"g": "-(으)면 되다", "en": "just need to", "th": "แค่...ก็พอ"}
-  ]
+   {
+    "g": "-(으)면 되다"
+   }
+  ],
+  "note": {
+   "en": "-기만 하면 = as long as; whenever (just)\n-(으)면 되다 = just need to",
+   "th": "-기만 하면 = แค่...ก็... / ทุกครั้งที่...\n-(으)면 되다 = แค่...ก็พอ"
+  }
  },
  "-(으)ㄹ까 봐": {
-  "form": {"en": "V/A-(으)ㄹ까 봐(서)", "th": "V/A-(으)ㄹ까 봐(서)"},
+  "form": {
+   "en": "V/A-(으)ㄹ까 봐(서)",
+   "th": "V/A-(으)ㄹ까 봐(서)"
+  },
   "rules": [
-   {"t": "note", "en": "The second part is what you did or felt because of the worry (깰까 봐 걱정했다).", "th": "ส่วนหลังคือสิ่งที่ทำหรือรู้สึกเพราะความกังวลนั้น (깰까 봐 걱정했다)"},
-   {"t": "no", "en": "No command or suggestion after it.", "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้"}
+   {
+    "t": "note",
+    "en": "The second part is what you did or felt because of the worry (깰까 봐 걱정했다).",
+    "th": "ส่วนหลังคือสิ่งที่ทำหรือรู้สึกเพราะความกังวลนั้น (깰까 봐 걱정했다)"
+   },
+   {
+    "t": "no",
+    "en": "No command or suggestion after it.",
+    "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้"
+   }
   ],
   "similar": [
-   {"g": "-(으)ㄹ지도 모르다", "en": "might (no worry)", "th": "อาจจะ... (ไม่มีความกังวล)"}
-  ]
+   {
+    "g": "-(으)ㄹ지도 모르다"
+   }
+  ],
+  "note": {
+   "en": "-(으)ㄹ까 봐 = worried that, in case\n-(으)ㄹ지도 모르다 = might (a guess, without worry)",
+   "th": "-(으)ㄹ까 봐 = กลัวว่าจะ...\n-(으)ㄹ지도 모르다 = อาจจะ... (คาดเดา ไม่มีความกังวล)"
+  }
  },
  "-(으)나": {
-  "form": {"en": "V/A-으나 (final consonant) · -나 (no final consonant) · past: -았/었으나", "th": "V/A-으나 (มีตัวสะกด) · -나 (ไม่มีตัวสะกด) · อดีต: -았/었으나"},
+  "form": {
+   "en": "V/A-으나 (final consonant) · -나 (no final consonant) · past: -았/었으나",
+   "th": "V/A-으나 (มีตัวสะกด) · -나 (ไม่มีตัวสะกด) · อดีต: -았/었으나"
+  },
   "rules": [],
   "similar": [
-   {"g": "-지만", "en": "but (everyday)", "th": "แต่ (ใช้ทั่วไป)"}
-  ]
+   {
+    "g": "-지만"
+   }
+  ],
+  "note": {
+   "en": "-(으)나 = but (formal, written)\n-지만 = but (everyday)",
+   "th": "-(으)나 = แต่... (ภาษาเขียน)\n-지만 = แต่ (ใช้ทั่วไป)"
+  }
  },
  "-는 법이다": {
-  "form": {"en": "V-는 법이다 · A-(으)ㄴ 법이다", "th": "V-는 법이다 · A-(으)ㄴ 법이다"},
+  "form": {
+   "en": "V-는 법이다 · A-(으)ㄴ 법이다",
+   "th": "V-는 법이다 · A-(으)ㄴ 법이다"
+  },
   "rules": [],
   "similar": [
-   {"g": "-기 마련이다", "en": "naturally ~ (almost the same)", "th": "ย่อมจะ... (เกือบเหมือนกัน)"}
-  ]
+   {
+    "g": "-기 마련이다"
+   }
+  ],
+  "note": {
+   "en": "-는 법이다 = it is natural that; that is how things are\n-기 마련이다 = it is natural that ~ (almost the same)",
+   "th": "-는 법이다 = ย่อมจะ... (เป็นธรรมดา)\n-기 마련이다 = ย่อมจะ... (เกือบเหมือนกัน)"
+  }
  },
  "-는 바람에": {
-  "form": {"en": "V-는 바람에 · verbs only · always -는, even for past events (타는 바람에 늦었다 ✓ / 탄 바람에 ✗)", "th": "V-는 바람에 · ใช้กับกริยาเท่านั้น · ใช้ -는 เสมอ แม้เป็นเหตุการณ์ในอดีต (타는 바람에 늦었다 ✓ / 탄 바람에 ✗)"},
+  "form": {
+   "en": "V-는 바람에 · verbs only · always -는, even for past events (타는 바람에 늦었다 ✓ / 탄 바람에 ✗)",
+   "th": "V-는 바람에 · ใช้กับกริยาเท่านั้น · ใช้ -는 เสมอ แม้เป็นเหตุการณ์ในอดีต (타는 바람에 늦었다 ✓ / 탄 바람에 ✗)"
+  },
   "rules": [
-   {"t": "note", "en": "The result is usually negative or unexpected.", "th": "ผลมักเป็นเชิงลบหรือไม่คาดคิด"},
-   {"t": "no", "en": "No command or suggestion after it (~세요, ~(으)ㅂ시다 ✗).", "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้ (~세요, ~(으)ㅂ시다 ✗)"},
-   {"t": "no", "en": "No past tense before it (탔는 바람에 ✗). Put the past tense at the end: 늦었다.", "th": "ห้ามใส่อดีตข้างหน้า (탔는 바람에 ✗) ให้ใส่อดีตตอนท้าย: 늦었다"}
+   {
+    "t": "note",
+    "en": "The result is usually negative or unexpected.",
+    "th": "ผลมักเป็นเชิงลบหรือไม่คาดคิด"
+   },
+   {
+    "t": "no",
+    "en": "No command or suggestion after it (~세요, ~(으)ㅂ시다 ✗).",
+    "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้ (~세요, ~(으)ㅂ시다 ✗)"
+   },
+   {
+    "t": "no",
+    "en": "No past tense before it (탔는 바람에 ✗). Put the past tense at the end: 늦었다.",
+    "th": "ห้ามใส่อดีตข้างหน้า (탔는 바람에 ✗) ให้ใส่อดีตตอนท้าย: 늦었다"
+   }
   ],
   "similar": [
-   {"g": "-(으)ㄴ 탓에", "en": "also blames a cause", "th": "โทษสาเหตุเช่นกัน", "exam": "round 96 Q3"},
-   {"g": "-기 때문에", "en": "neutral; the result can be good", "th": "เป็นกลาง; ผลอาจดีก็ได้"},
-   {"g": "-아/어서", "en": "neutral, everyday", "th": "เป็นกลาง ใช้ทั่วไป"}
-  ]
+   {
+    "g": "-(으)ㄴ 탓에",
+    "exam": "round 96 Q3"
+   },
+   {
+    "g": "-기 때문에"
+   },
+   {
+    "g": "-아/어서"
+   }
+  ],
+  "note": {
+   "en": "-는 바람에 = because (something unexpected caused a bad result)\n-(으)ㄴ 탓에 = because (negative result; blames the cause)\n-기 때문에 = because (neutral; the result can be good)\n-아/어서 = because (neutral, everyday)",
+   "th": "-는 바람에 = เพราะ... (เกิดเหตุไม่คาดคิด ทำให้ผลออกมาไม่ดี)\n-(으)ㄴ 탓에 = เพราะ... (ผลเสีย; โทษสาเหตุ)\n-기 때문에 = เพราะ... (เป็นกลาง ผลอาจดีก็ได้)\n-아/어서 = เพราะ... (เป็นกลาง ใช้ทั่วไป)"
+  }
  },
  "-는 대신(에)": {
-  "form": {"en": "V-는 대신(에) · V-(으)ㄴ 대신(에) (past) · A-(으)ㄴ 대신(에) · N 대신(에)", "th": "V-는 대신(에) · V-(으)ㄴ 대신(에) (อดีต) · A-(으)ㄴ 대신(에) · N 대신(에)"},
+  "form": {
+   "en": "V-는 대신(에) · V-(으)ㄴ 대신(에) (past) · A-(으)ㄴ 대신(에) · N 대신(에)",
+   "th": "V-는 대신(에) · V-(으)ㄴ 대신(에) (อดีต) · A-(으)ㄴ 대신(에) · N 대신(에)"
+  },
   "rules": [
-   {"t": "note", "en": "Two meanings: 'instead of' and 'in exchange for' (싼 대신에 품질이 나쁘다).", "th": "สองความหมาย: 'แทนที่จะ' และ 'แลกกับ' (싼 대신에 품질이 나쁘다)"}
+   {
+    "t": "note",
+    "en": "Two meanings: 'instead of' and 'in exchange for' (싼 대신에 품질이 나쁘다).",
+    "th": "สองความหมาย: 'แทนที่จะ' และ 'แลกกับ' (싼 대신에 품질이 나쁘다)"
+   }
   ],
   "similar": [
-   {"g": "-(으)ㄴ/는 반면에", "en": "contrast (while, whereas)", "th": "ข้อขัดแย้ง (ในขณะที่...)"}
-  ]
+   {
+    "g": "-(으)ㄴ/는 반면에"
+   }
+  ],
+  "note": {
+   "en": "-는 대신(에) = instead of; in exchange for\n-(으)ㄴ/는 반면에 = contrast (while, whereas)",
+   "th": "-는 대신(에) = แทนที่จะ... / แลกกับ...\n-(으)ㄴ/는 반면에 = ข้อขัดแย้ง (ในขณะที่...)"
+  }
  },
  "-(이)라도": {
-  "form": {"en": "N(이)라도 · V-기라도 하다", "th": "N(이)라도 · V-기라도 하다"},
+  "form": {
+   "en": "N(이)라도 · V-기라도 하다",
+   "th": "N(이)라도 · V-기라도 하다"
+  },
   "rules": [],
   "similar": [
-   {"g": "N도", "en": "even", "th": "แม้แต่..."}
-  ]
+   {
+    "g": "N도"
+   }
+  ],
+  "note": {
+   "en": "-(이)라도 = even; at least (if nothing else)\nN도 = even",
+   "th": "-(이)라도 = แม้แต่... / ...ก็ยังดี\nN도 = แม้แต่..."
+  }
  },
  "-ㄴ/는다면": {
-  "form": {"en": "V-ㄴ/는다면 · A-다면 · N-(이)라면 · past: -았/었다면", "th": "V-ㄴ/는다면 · A-다면 · N-(이)라면 · อดีต: -았/었다면"},
+  "form": {
+   "en": "V-ㄴ/는다면 · A-다면 · N-(이)라면 · past: -았/었다면",
+   "th": "V-ㄴ/는다면 · A-다면 · N-(이)라면 · อดีต: -았/었다면"
+  },
   "rules": [],
   "similar": [
-   {"g": "-(으)면", "en": "if (more likely, real)", "th": "ถ้า... (มีโอกาสเกิดจริงมากกว่า)"}
-  ]
+   {
+    "g": "-(으)면"
+   }
+  ],
+  "note": {
+   "en": "-ㄴ/는다면 = if (hypothetical)\n-(으)면 = if (more likely, real)",
+   "th": "-ㄴ/는다면 = ถ้าหากว่า... (สมมติ)\n-(으)면 = ถ้า... (มีโอกาสเกิดจริงมากกว่า)"
+  }
  },
  "-더니": {
-  "form": {"en": "V/A-더니 (change seen in someone else) · -았/었더니 (my action → result I found)", "th": "V/A-더니 (เห็นการเปลี่ยนแปลงของผู้อื่น) · -았/었더니 (การกระทำของฉัน → ผลที่พบ)"},
+  "form": {
+   "en": "V/A-더니 (change seen in someone else) · -았/었더니 (my action → result I found)",
+   "th": "V/A-더니 (เห็นการเปลี่ยนแปลงของผู้อื่น) · -았/었더니 (การกระทำของฉัน → ผลที่พบ)"
+  },
   "rules": [
-   {"t": "note", "en": "Without 았/었: a change you saw (동생이 열심히 공부하더니 합격했다). With 았/었: your action and what you discovered (두었더니 싹이 텄다).", "th": "ไม่มี 았/었: การเปลี่ยนแปลงที่เห็น (동생이 열심히 공부하더니 합격했다) มี 았/었: การกระทำของตนและสิ่งที่พบ (두었더니 싹이 텄다)"}
+   {
+    "t": "note",
+    "en": "Without 았/었: a change you saw (동생이 열심히 공부하더니 합격했다). With 았/었: your action and what you discovered (두었더니 싹이 텄다).",
+    "th": "ไม่มี 았/었: การเปลี่ยนแปลงที่เห็น (동생이 열심히 공부하더니 합격했다) มี 았/었: การกระทำของตนและสิ่งที่พบ (두었더니 싹이 텄다)"
+   }
   ],
   "similar": [
-   {"g": "-았/었는데", "en": "background, no discovery", "th": "ให้ข้อมูลพื้นหลัง ไม่มีการค้นพบ"}
-  ]
+   {
+    "g": "-았/었는데"
+   }
+  ],
+  "note": {
+   "en": "-더니 = (saw / did in the past) and then, so\n-았/었는데 = and / but (background only, no discovery)",
+   "th": "-더니 = ...แล้วก็... (สิ่งที่เห็นหรือทำในอดีต แล้วเกิดผลตามมา)\n-았/었는데 = ...แต่/และ (ให้ข้อมูลพื้นหลังเท่านั้น ไม่มีการค้นพบ)"
+  }
  }
 }

@@ -35,9 +35,9 @@ def build():
     def text_blocks(d, lang):
         """Form / rules / similar as editable text, one item per line."""
         rules = "\n".join(f"{RULE_MARK[r['t']]} {r[lang]}" for r in d.get("rules", []))
-        similar = "\n".join(f"≈ {s['g']}: {s[lang]}" + (f"  ⭐ exam pair: {s['exam']}" if s.get("exam") else "")
-                             for s in d.get("similar", []))
-        return {f"form_{lang}": d.get("form", {}).get(lang, ""), f"rules_{lang}": rules, f"similar_{lang}": similar}
+        similar = "\n".join(f"≈ {s['g']}" for s in d.get("similar", []))     # names only (owner's style)
+        return {f"form_{lang}": d.get("form", {}).get(lang, ""), f"rules_{lang}": rules, f"similar_{lang}": similar,
+                f"note_{lang}": d.get("note", {}).get(lang, "")}
 
     groups = []
     for i, g in enumerate(labels["groups"]):
@@ -150,7 +150,7 @@ textarea { min-height: 38px; resize: vertical; }
   <input type="file" id="file" accept=".json" hidden>
 </header>
 <main>
-  <p class="help">For each grammar point: check the <b>grammar</b>, its <b>meaning</b>, <b>form</b> (how to attach -는/(으)ㄴ/(으)ㄹ), <b>rules</b> (✓ do · ✗ don't · • note) and <b>similar</b> grammar (⭐ = the exam itself paired them in Q3–4), in English and Thai, against the real examples.
+  <p class="help">For each grammar point: check the <b>grammar</b>, its <b>meaning</b>, <b>form</b> (how to attach -는/(으)ㄴ/(으)ㄹ), <b>rules</b> (✓ do · ✗ don't · • note) <b>similar</b> grammar and the <b>note</b> (how the similar grammar differs), in English and Thai, against the real examples. ⭐ = the exam itself paired them in Q3–4.
   ✅ = correct. Editing any box marks it ✏️ (your version is saved). ❌ = not useful for learners (drop it).
   The note box is optional (e.g. "merge with -는 바람에").</p>
   <div id="tested"></div>
@@ -163,7 +163,7 @@ textarea { min-height: 38px; resize: vertical; }
 const GROUPS = __GROUPS__;
 const DROPPED = __DROPPED__;
 const KEY = "grammar-review-v1";
-const EDITABLE = ["name", "en", "th", "form_en", "form_th", "rules_en", "rules_th", "similar_en", "similar_th"];
+const EDITABLE = ["name", "en", "th", "form_en", "form_th", "rules_en", "rules_th", "similar_en", "similar_th", "note_en", "note_th"];
 let state = {};
 try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { state = {}; }
 const rec = id => state[id] || (state[id] = { status: null, edits: {}, note: "", restore: false });
@@ -182,13 +182,13 @@ function persist() {
 
 function field(g, key, cls, multi) {
   const r = rec(g.id);
-  const el = document.createElement(key === "note" || multi ? "textarea" : "input");
+  const el = document.createElement(key === "comment" || multi ? "textarea" : "input");
   if (el.tagName === "INPUT") el.type = "text";
   if (multi) el.rows = Math.max(1, (g[key] || "").split("\n").length);
   if (cls) el.className = cls;
-  el.value = key === "note" ? r.note : (key in r.edits ? r.edits[key] : g[key]);
+  el.value = key === "comment" ? r.note : (key in r.edits ? r.edits[key] : g[key]);
   el.oninput = () => {
-    if (key === "note") { r.note = el.value; persist(); return; }
+    if (key === "comment") { r.note = el.value; persist(); return; }
     if (el.value === g[key]) delete r.edits[key]; else r.edits[key] = el.value;
     r.status = Object.keys(r.edits).length ? "edit" : (r.status === "edit" ? null : r.status);
     persist(); renderState(g);
@@ -225,9 +225,9 @@ function render(g) {
   const h0 = document.createElement("span"), h1 = document.createElement("span"), h2 = document.createElement("span");
   h1.className = h2.className = "head"; h1.textContent = "English"; h2.textContent = "ภาษาไทย"; grid.append(h0, h1, h2);
   add("Meaning", field(g, "en"), field(g, "th"));
-  for (const [k, label] of [["form", "Form"], ["rules", "Rules"], ["similar", "Similar"]])
+  for (const [k, label] of [["form", "Form"], ["rules", "Rules"], ["similar", "Similar"], ["note", "Note"]])
     if (g[k + "_en"] || g[k + "_th"]) add(label, field(g, k + "_en", "", true), field(g, k + "_th", "", true));
-  const note = field(g, "note"); note.classList.add("full"); add("Your note", note);
+  const note = field(g, "comment"); note.classList.add("full"); note.placeholder = "Optional: a question or instruction for Claude"; add("Comment", note);
   card.appendChild(grid);
   if (g.note) { const n = document.createElement("div"); n.className = "note"; n.textContent = "Claude: " + g.note; card.appendChild(n); }
   const pieces = document.createElement("div"); pieces.className = "pieces";
