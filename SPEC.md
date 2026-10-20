@@ -152,6 +152,7 @@ audit sheet image for human check.
 
 ## 12. Open items
 
+- **Before public launch:** owner reviews the remaining 90 of 98 grammar points in `content/grammar/` (8 reviewed on 2026-10-20). Until then they are Claude-written and should be labelled as not yet reviewed. Priority: Thai wording and Rules.
 - Later (if time): round 96 as held-out **test set** for an honest accuracy number
 - Later (if time): `eval_extraction.py` option to evaluate the current pipeline output (not the review-time snapshot)
 - Later: describe Q53 / Q10 charts from page images
