@@ -16,7 +16,7 @@ DETAILS = sorted((ROOT / "content" / "grammar").glob("grammar_details_*.json"))
 RULE_MARK = {"ok": "✓", "no": "✗", "note": "•"}
 OUT = ROOT / "data" / "review" / "grammar_review.html"
 GRAMMAR_QUESTIONS = re.compile(r"^\d+-reading-[1-4]$")   # Reading Q1–4 test grammar directly
-MAX_EXAMPLES = 4
+SHOW_FIRST = 5   # examples visible before "Show all"
 
 
 def build():
@@ -44,11 +44,13 @@ def build():
         d = details.get(g["name"], {})
         members = [cands[m] for m in g["members"]]
         examples, seen = [], set()
-        for m in sorted(members, key=lambda c: -c["count"]):
+        for m in members:
             for e in m["examples"]:
-                if e["sentence"] not in seen and len(examples) < MAX_EXAMPLES:
+                if e["sentence"] not in seen:
                     seen.add(e["sentence"])
                     examples.append(e)
+        # newest round first, then question number
+        examples.sort(key=lambda e: (-int(e["source"].split("-")[0]), int(e["source"].split("-")[-1])))
         tested = sorted({q for m in members for q in m["questions"] if GRAMMAR_QUESTIONS.match(q)})
         groups.append({
             "id": f"g{i}", "name": g["name"], "en": g["en"], "th": g["th"], "note": g.get("note", ""),
@@ -64,7 +66,8 @@ def build():
                 "example": cands[p]["examples"][0]["sentence"]} for p, r in labels["dropped"].items()]
 
     html = TEMPLATE.replace("__GROUPS__", json.dumps(groups, ensure_ascii=False)) \
-                   .replace("__DROPPED__", json.dumps(dropped, ensure_ascii=False))
+                   .replace("__DROPPED__", json.dumps(dropped, ensure_ascii=False)) \
+                   .replace("__SHOW_FIRST__", str(SHOW_FIRST))
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(html, encoding="utf-8")
     n_tested = sum(bool(g["tested"]) for g in groups)
@@ -130,7 +133,9 @@ input[type=text], textarea { width: 100%; font: inherit; color: var(--ink); back
   border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; }
 input.name { font-size: 17px; font-weight: 600; }
 textarea { min-height: 38px; resize: vertical; }
-.examples { margin: 8px 0 0; padding: 0; list-style: none; }
+.exhead { margin-top: 12px; font-weight: 600; font-size: 13px; color: var(--muted); }
+button.more { margin-top: 6px; font-size: 13px; padding: 3px 10px; }
+.examples { margin: 4px 0 0; padding: 0; list-style: none; }
 .examples li { border-top: 1px dashed var(--line); padding: 6px 0; font-size: 14px; }
 .examples .src { color: var(--muted); font-size: 12px; margin-left: 6px; white-space: nowrap; }
 .pieces { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: var(--muted); }
@@ -163,6 +168,7 @@ textarea { min-height: 38px; resize: vertical; }
 const GROUPS = __GROUPS__;
 const DROPPED = __DROPPED__;
 const KEY = "grammar-review-v1";
+const SHOW_FIRST = __SHOW_FIRST__;
 const EDITABLE = ["name", "en", "th", "form_en", "form_th", "rules_en", "rules_th", "similar_en", "similar_th", "note_en", "note_th"];
 let state = {};
 try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { state = {}; }
@@ -233,13 +239,22 @@ function render(g) {
   const pieces = document.createElement("div"); pieces.className = "pieces";
   pieces.textContent = "Kiwi pieces: " + g.members.map(m => `${m.pattern} (${m.count})`).join("  ·  ");
   card.appendChild(pieces);
+  const h = document.createElement("div"); h.className = "exhead";
+  h.textContent = `Same grammar in other exam questions (${g.examples.length})`;
   const ul = document.createElement("ul"); ul.className = "examples";
-  for (const e of g.examples) {
+  g.examples.forEach((e, i) => {
     const li = document.createElement("li"); li.textContent = e.sentence;
+    if (i >= SHOW_FIRST) li.hidden = true;
     const s = document.createElement("span"); s.className = "src"; s.textContent = e.source.replace("-reading-", " Q").replace("-writing-", " W");
     li.appendChild(s); ul.appendChild(li);
+  });
+  card.append(h, ul);
+  if (g.examples.length > SHOW_FIRST) {
+    const more = document.createElement("button"); more.className = "more";
+    more.textContent = `Show all ${g.examples.length}`;
+    more.onclick = () => { ul.querySelectorAll("li[hidden]").forEach(li => li.hidden = false); more.remove(); };
+    card.appendChild(more);
   }
-  card.appendChild(ul);
   renderState(g); persist();
 }
 

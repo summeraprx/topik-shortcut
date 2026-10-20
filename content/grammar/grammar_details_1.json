@@ -7,13 +7,13 @@
   "rules": [
    {
     "t": "no",
-    "en": "Not with adjectives (예쁘고 있다 ✗).",
-    "th": "ใช้กับคุณศัพท์ไม่ได้ (예쁘고 있다 ✗)"
+    "en": "Not with adjectives.",
+    "th": "ใช้กับคุณศัพท์ไม่ได้"
    },
    {
     "t": "note",
-    "en": "With wearing verbs (입다, 신다, 쓰다) it can mean the state 'is wearing': 안경을 쓰고 있다.",
-    "th": "กับกริยาการสวมใส่ (입다, 신다, 쓰다) หมายถึงสภาพ 'สวมอยู่' ได้: 안경을 쓰고 있다"
+    "en": "With wearing verbs (입다, 신다, 쓰다) it can mean the state 'is wearing'.",
+    "th": "กับกริยาการสวมใส่ (입다, 신다, 쓰다) หมายถึงสภาพ 'สวมอยู่' ได้"
    }
   ],
   "similar": [
@@ -37,18 +37,18 @@
   "rules": [
    {
     "t": "no",
-    "en": "No past tense before it (갔어서 ✗ → 가서 … 갔다).",
-    "th": "ห้ามใส่อดีตหน้า -아/어서 (갔어서 ✗ → 가서 … 갔다)"
+    "en": "No past tense before it.",
+    "th": "ห้ามใส่อดีตหน้า -아/어서"
    },
    {
     "t": "no",
-    "en": "'Because' meaning: no command or suggestion after it (비가 와서 가져가세요 ✗ → 오니까).",
-    "th": "ความหมาย 'เพราะ': ตามด้วยคำสั่ง/ชักชวนไม่ได้ (비가 와서 가져가세요 ✗ → 오니까)"
+    "en": "'Because' meaning: no command or suggestion after it.",
+    "th": "ความหมาย 'เพราะ': ตามด้วยคำสั่ง/ชักชวนไม่ได้"
    },
    {
     "t": "note",
-    "en": "'And then' meaning: same subject, actions connected (가서 만나다 = go and meet there).",
-    "th": "ความหมาย 'แล้วจึง': ประธานเดียวกัน และสองการกระทำเชื่อมกัน (가서 만나다 = ไปแล้วพบที่นั่น)"
+    "en": "'And then' meaning: same subject, and the two actions are connected.",
+    "th": "ความหมาย 'แล้วจึง': ประธานเดียวกัน และสองการกระทำเชื่อมกัน"
    }
   ],
   "similar": [
@@ -179,8 +179,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Turns a whole clause into a noun: 운동하는 것을 좋아하다.",
-    "th": "ทำให้ทั้งประโยคย่อยเป็นคำนาม: 운동하는 것을 좋아하다"
+    "en": "Turns a whole clause into a noun.",
+    "th": "ทำให้ทั้งประโยคย่อยเป็นคำนาม"
    }
   ],
   "similar": [
@@ -336,8 +336,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "With adjectives it means 'not enough / not satisfactory': 깨끗하지 못하다.",
-    "th": "เมื่อใช้กับคุณศัพท์หมายถึง 'ไม่พอ / ไม่เป็นที่น่าพอใจ': 깨끗하지 못하다"
+    "en": "With adjectives it means 'not enough / not satisfactory'.",
+    "th": "เมื่อใช้กับคุณศัพท์หมายถึง 'ไม่พอ / ไม่เป็นที่น่าพอใจ'"
    }
   ],
   "similar": [
@@ -366,8 +366,8 @@
    },
    {
     "t": "note",
-    "en": "On the TOPIK writing paper: 문제를 그대로 옮겨 쓰지 마시오 = do not copy the question.",
-    "th": "ในข้อสอบเขียน TOPIK: 문제를 그대로 옮겨 쓰지 마시오 = ห้ามลอกโจทย์"
+    "en": "On the TOPIK writing paper, -지 마시오 is used in instructions (do not ~).",
+    "th": "ในข้อสอบเขียน TOPIK ใช้ -지 마시오 ในคำสั่ง (ห้าม...)"
    }
   ],
   "similar": [
@@ -495,8 +495,8 @@
   "rules": [
    {
     "t": "no",
-    "en": "Not with verbs that take an object (문을 열어 있다 ✗ → 문이 열려 있다).",
-    "th": "ใช้กับกริยาที่มีกรรมไม่ได้ (문을 열어 있다 ✗ → 문이 열려 있다)"
+    "en": "Not with verbs that take an object.",
+    "th": "ใช้กับกริยาที่มีกรรมไม่ได้"
    }
   ],
   "similar": [
@@ -615,8 +615,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Two meanings: 'so that' (purpose) and 'until / to the point that' (밤새도록 = all night long).",
-    "th": "สองความหมาย: 'เพื่อให้' (จุดประสงค์) และ 'จน...' (밤새도록 = ตลอดทั้งคืน)"
+    "en": "Two meanings: 'so that' (purpose) and 'until / to the point that'.",
+    "th": "สองความหมาย: 'เพื่อให้' (จุดประสงค์) และ 'จน...'"
    }
   ],
   "similar": [
@@ -640,8 +640,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Formal advice or instruction (often in passages: ~도록 해야 한다).",
-    "th": "คำแนะนำหรือคำสั่งแบบทางการ (พบบ่อยในบทอ่าน: ~도록 해야 한다)"
+    "en": "Formal advice or instruction; in passages often -도록 해야 한다.",
+    "th": "คำแนะนำหรือคำสั่งแบบทางการ; ในบทอ่านมักเป็น -도록 해야 한다"
    }
   ],
   "similar": [
@@ -667,8 +667,8 @@
    },
    {
     "t": "no",
-    "en": "No command or suggestion after it (사려고 가세요 ✗ → 사러 가세요 / 사기 위해 가세요).",
-    "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้ (사려고 가세요 ✗ → 사러 가세요 / 사기 위해 가세요)"
+    "en": "No command or suggestion after it (use -(으)러 or -기 위해 instead).",
+    "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้ (ให้ใช้ -(으)러 หรือ -기 위해 แทน)"
    }
   ],
   "similar": [

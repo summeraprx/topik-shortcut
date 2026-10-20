@@ -47,7 +47,8 @@ EU_ENDINGS = {"면", "니까", "니", "러", "려고", "려면", "며", "면서"
 TOO_BASIC = {"어", "고", "게", "지", "다"}   # single endings too basic to be a "shortcut" on their own
 MAX_LEN = 4
 MIN_COUNT = 2
-EXAMPLES = 3
+EXAMPLES = 3            # example sentences kept per word
+GRAMMAR_EXAMPLES = 10_000   # per grammar pattern: keep all (shown as "same grammar in other exam questions")
 
 kiwi = Kiwi()
 
@@ -145,8 +146,8 @@ def pattern_key(seq):
     return " ".join(parts)
 
 
-def add_example(entry, sentence, qid):
-    if len(entry["examples"]) < EXAMPLES and all(e["sentence"] != sentence for e in entry["examples"]):
+def add_example(entry, sentence, qid, limit=EXAMPLES):
+    if len(entry["examples"]) < limit and all(e["sentence"] != sentence for e in entry["examples"]):
         entry["examples"].append({"sentence": sentence, "source": qid})
 
 
@@ -180,7 +181,7 @@ def analyse(questions):
                 g["count"] += 1
                 g["rounds"].add(rnd)
                 g["questions"].add(qid)
-                add_example(g, sentence, qid)
+                add_example(g, sentence, qid, GRAMMAR_EXAMPLES)
     return vocab, grammar, total_tokens, stems
 
 

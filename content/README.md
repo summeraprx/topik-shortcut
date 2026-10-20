@@ -7,5 +7,5 @@ Our own learning content (not exam text). Tracked in git.
 
 Written by Claude, reviewed by the owner (`pipeline/grammar_review_page.py`).
 
-**Before making the repo public:** 4 short example phrases come from exam questions
-(거나 마찬가지이다, 깰까 봐 걱정했다, 문제를 그대로 옮겨 쓰지 마시오, 부착하게 만듦으로써) — replace them with our own examples.
+Rules contain no exam sentences (examples were removed on the owner's request).
+Example sentences from the exams are added only when the review page is built (from `data/`, not stored here).

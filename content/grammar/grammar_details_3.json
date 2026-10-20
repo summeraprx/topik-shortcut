@@ -12,8 +12,8 @@
    },
    {
     "t": "no",
-    "en": "Verbs only (예쁘기 위해 ✗ → 예뻐지기 위해).",
-    "th": "ใช้กับกริยาเท่านั้น (예쁘기 위해 ✗ → 예뻐지기 위해)"
+    "en": "Verbs only (for adjectives use -아/어지기 위해).",
+    "th": "ใช้กับกริยาเท่านั้น (คุณศัพท์ให้ใช้ -아/어지기 위해)"
    }
   ],
   "similar": [
@@ -78,8 +78,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "-는 대로 can also mean 'as soon as' (도착하는 대로 연락하세요).",
-    "th": "-는 대로 ยังแปลว่า 'ทันทีที่' ได้ด้วย (도착하는 대로 연락하세요)"
+    "en": "-는 대로 can also mean 'as soon as'.",
+    "th": "-는 대로 ยังแปลว่า 'ทันทีที่' ได้ด้วย"
    }
   ],
   "similar": [
@@ -164,8 +164,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "The second action is extra, done while taking the chance (시장에 간 김에 과일도 샀다).",
-    "th": "การกระทำที่สองเป็นสิ่งที่ทำเพิ่มโดยถือโอกาส (시장에 간 김에 과일도 샀다)"
+    "en": "The second action is extra, done while taking the chance.",
+    "th": "การกระทำที่สองเป็นสิ่งที่ทำเพิ่มโดยถือโอกาส"
    }
   ],
   "similar": [
@@ -240,8 +240,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "In the past, 몰랐다 / 알았다 often means 'I didn't expect / I thought' (이렇게 늦을 줄 몰랐다).",
-    "th": "ในรูปอดีต 몰랐다 / 알았다 มักแปลว่า 'ไม่คิดว่าจะ / นึกว่าจะ' (이렇게 늦을 줄 몰랐다)"
+    "en": "In the past, 몰랐다 / 알았다 often means 'I didn't expect / I thought'.",
+    "th": "ในรูปอดีต 몰랐다 / 알았다 มักแปลว่า 'ไม่คิดว่าจะ / นึกว่าจะ'"
    }
   ],
   "similar": [

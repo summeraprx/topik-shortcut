@@ -23,8 +23,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Space before 데: 줄이는 데 (in reducing). Without a space, -는데 means 'but / and'.",
-    "th": "มีวรรคก่อน 데: 줄이는 데 (ในการลด) ถ้าไม่มีวรรค -는데 แปลว่า 'แต่ / และ'"
+    "en": "Space before 데. Without a space, -는데 means 'but / and'.",
+    "th": "มีวรรคก่อน 데 ถ้าไม่มีวรรค -는데 แปลว่า 'แต่ / และ'"
    }
   ],
   "similar": [
@@ -64,13 +64,13 @@
   "rules": [
    {
     "t": "no",
-    "en": "No command or suggestion after it (늦었기 때문에 서두르세요 ✗ → 늦었으니까).",
-    "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้ (늦었기 때문에 서두르세요 ✗ → 늦었으니까)"
+    "en": "No command or suggestion after it.",
+    "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้"
    },
    {
     "t": "ok",
-    "en": "Past tense can go before it (갔기 때문에 ✓), unlike -아/어서.",
-    "th": "ใส่อดีตข้างหน้าได้ (갔기 때문에 ✓) ต่างจาก -아/어서"
+    "en": "Past tense can go before it, unlike -아/어서.",
+    "th": "ใส่อดีตข้างหน้าได้ ต่างจาก -아/어서"
    }
   ],
   "similar": [
@@ -148,8 +148,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "From the past up to now (매진해 왔다 = has devoted until now).",
-    "th": "จากอดีตจนถึงปัจจุบัน (매진해 왔다 = ทุ่มเทมาจนถึงตอนนี้)"
+    "en": "From the past up to now.",
+    "th": "จากอดีตจนถึงปัจจุบัน"
    }
   ],
   "similar": [
@@ -232,8 +232,8 @@
    },
    {
     "t": "note",
-    "en": "-다가 = stopped in the middle (가다가 = on the way); -았/었다가 = finished, then changed (샀다가 환불했다).",
-    "th": "-다가 = หยุดกลางคัน (가다가 = ระหว่างทาง); -았/었다가 = ทำเสร็จแล้วเปลี่ยน (샀다가 환불했다)"
+    "en": "-다가 = stopped in the middle; -았/었다가 = finished, then changed.",
+    "th": "-다가 = หยุดกลางคัน; -았/었다가 = ทำเสร็จแล้วเปลี่ยน"
    }
   ],
   "similar": [
@@ -257,8 +257,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Lists examples, then usually a summary word: 사진을 찍는 등의 행동 (actions such as taking photos).",
-    "th": "ยกตัวอย่าง แล้วมักตามด้วยคำสรุป: 사진을 찍는 등의 행동 (การกระทำ เช่น ถ่ายรูป)"
+    "en": "Lists examples, then usually a summary word.",
+    "th": "ยกตัวอย่าง แล้วมักตามด้วยคำสรุป"
    }
   ],
   "similar": [
@@ -378,8 +378,8 @@
   "rules": [
    {
     "t": "no",
-    "en": "Only with a movement verb after it (가다, 오다, 다니다, 나가다, 모여들다).",
-    "th": "ต้องตามด้วยกริยาการเคลื่อนที่เท่านั้น (가다, 오다, 다니다, 나가다, 모여들다)"
+    "en": "Only with a movement verb after it (가다, 오다, 다니다, 나가다).",
+    "th": "ต้องตามด้วยกริยาการเคลื่อนที่เท่านั้น (가다, 오다, 다니다, 나가다)"
    }
   ],
   "similar": [
@@ -463,8 +463,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Two meanings: reason (commands allowed after it) and discovery (가 보니 = when I went, I found).",
-    "th": "สองความหมาย: เหตุผล (ตามด้วยคำสั่งได้) และการค้นพบ (가 보니 = พอไปดูก็พบว่า)"
+    "en": "Two meanings: reason (commands allowed after it) and discovery (when I did ~, I found).",
+    "th": "สองความหมาย: เหตุผล (ตามด้วยคำสั่งได้) และการค้นพบ (พอทำ...ก็พบว่า)"
    }
   ],
   "similar": [
@@ -485,8 +485,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Written: when A happened, B followed (계속 이어지자 = as it kept going on).",
-    "th": "ภาษาเขียน: พอ A เกิดขึ้น B ก็ตามมา (계속 이어지자 = พอยังคงเกิดต่อเนื่อง)"
+    "en": "Written: when A happened, B followed.",
+    "th": "ภาษาเขียน: พอ A เกิดขึ้น B ก็ตามมา"
    },
    {
     "t": "no",
@@ -512,8 +512,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Describes another person's feelings (그는 슬퍼한다), while the plain adjective is for your own (나는 슬프다).",
-    "th": "ใช้บรรยายความรู้สึกของผู้อื่น (그는 슬퍼한다) ส่วนคุณศัพท์ธรรมดาใช้กับตนเอง (나는 슬프다)"
+    "en": "Describes another person's feelings; the plain adjective is for your own.",
+    "th": "ใช้บรรยายความรู้สึกของผู้อื่น ส่วนคุณศัพท์ธรรมดาใช้กับตนเอง"
    }
   ],
   "similar": [
@@ -588,8 +588,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Formal written: the method or means (부착하게 만듦으로써 = by making it stick).",
-    "th": "ภาษาเขียนทางการ: วิธีการ (부착하게 만듦으로써 = โดยการทำให้ติด)"
+    "en": "Formal written: the method or means.",
+    "th": "ภาษาเขียนทางการ: วิธีการ"
    }
   ],
   "similar": [
@@ -610,8 +610,8 @@
   "rules": [
    {
     "t": "no",
-    "en": "No past tense before it (갔자마자 ✗).",
-    "th": "ห้ามใส่อดีตข้างหน้า (갔자마자 ✗)"
+    "en": "No past tense before it.",
+    "th": "ห้ามใส่อดีตข้างหน้า"
    }
   ],
   "similar": [
@@ -651,8 +651,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Something almost happened but did not. Often with 하마터면: 하마터면 넘어질 뻔했다.",
-    "th": "บางอย่างเกือบเกิดแต่ไม่เกิด มักใช้กับ 하마터면: 하마터면 넘어질 뻔했다"
+    "en": "Something almost happened but did not. Often used with 하마터면.",
+    "th": "บางอย่างเกือบเกิดแต่ไม่เกิด มักใช้คู่กับ 하마터면"
    }
   ],
   "similar": [],
@@ -743,8 +743,8 @@
   "rules": [
    {
     "t": "no",
-    "en": "Not for things done every day (밥을 먹은 적이 있다 sounds strange).",
-    "th": "ไม่ใช้กับสิ่งที่ทำทุกวัน (밥을 먹은 적이 있다 ฟังดูแปลก)"
+    "en": "Not for things done every day.",
+    "th": "ไม่ใช้กับสิ่งที่ทำทุกวัน"
    }
   ],
   "similar": [
@@ -787,8 +787,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Space before 지: 온 지 일 년 (one year since coming). Without a space, -(으)ㄴ지 means 'whether'.",
-    "th": "มีวรรคก่อน 지: 온 지 일 년 (มาได้หนึ่งปีแล้ว) ถ้าไม่มีวรรค -(으)ㄴ지 แปลว่า 'หรือไม่'"
+    "en": "Space before 지. Without a space, -(으)ㄴ지 means 'whether'.",
+    "th": "มีวรรคก่อน 지 ถ้าไม่มีวรรค -(으)ㄴ지 แปลว่า 'หรือไม่'"
    }
   ],
   "similar": [
@@ -841,8 +841,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "The second part is what you did or felt because of the worry (깰까 봐 걱정했다).",
-    "th": "ส่วนหลังคือสิ่งที่ทำหรือรู้สึกเพราะความกังวลนั้น (깰까 봐 걱정했다)"
+    "en": "The second part is what you did or felt because of the worry.",
+    "th": "ส่วนหลังคือสิ่งที่ทำหรือรู้สึกเพราะความกังวลนั้น"
    },
    {
     "t": "no",
@@ -905,13 +905,13 @@
    },
    {
     "t": "no",
-    "en": "No command or suggestion after it (~세요, ~(으)ㅂ시다 ✗).",
-    "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้ (~세요, ~(으)ㅂ시다 ✗)"
+    "en": "No command or suggestion after it.",
+    "th": "ตามด้วยคำสั่ง/ชักชวนไม่ได้"
    },
    {
     "t": "no",
-    "en": "No past tense before it (탔는 바람에 ✗). Put the past tense at the end: 늦었다.",
-    "th": "ห้ามใส่อดีตข้างหน้า (탔는 바람에 ✗) ให้ใส่อดีตตอนท้าย: 늦었다"
+    "en": "No past tense before it; put the past tense at the end of the sentence.",
+    "th": "ห้ามใส่อดีตข้างหน้า ให้ใส่อดีตตอนท้ายประโยค"
    }
   ],
   "similar": [
@@ -939,8 +939,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Two meanings: 'instead of' and 'in exchange for' (싼 대신에 품질이 나쁘다).",
-    "th": "สองความหมาย: 'แทนที่จะ' และ 'แลกกับ' (싼 대신에 품질이 나쁘다)"
+    "en": "Two meanings: 'instead of' and 'in exchange for'.",
+    "th": "สองความหมาย: 'แทนที่จะ' และ 'แลกกับ'"
    }
   ],
   "similar": [
@@ -993,8 +993,8 @@
   "rules": [
    {
     "t": "note",
-    "en": "Without 았/었: a change you saw (동생이 열심히 공부하더니 합격했다). With 았/었: your action and what you discovered (두었더니 싹이 텄다).",
-    "th": "ไม่มี 았/었: การเปลี่ยนแปลงที่เห็น (동생이 열심히 공부하더니 합격했다) มี 았/었: การกระทำของตนและสิ่งที่พบ (두었더니 싹이 텄다)"
+    "en": "Without 았/었: a change you saw in someone else. With 았/었: your own action and what you discovered.",
+    "th": "ไม่มี 았/었: การเปลี่ยนแปลงที่เห็นในผู้อื่น มี 았/었: การกระทำของตนและสิ่งที่พบ"
    }
   ],
   "similar": [
