@@ -4,7 +4,9 @@ Clean texts = official model answers (rounds 102, 96, 91; Q51–54). They should
 Then one known error is injected at a time, and we check that the right rule fires:
 
   53/54  polite_ending · spoken · title · bullets · too_short · too_long · copied_question (54) ·
-         spacing_missing · spacing_extra · typo (AI layer)
+         spacing_missing · spacing_extra · spoken_ending · no_ending · characters ·
+         loose_jamo · repeated · not_korean · off_topic (another round's answer) ·
+         missing_item (sentences about one key item removed) · typo (AI layer)
   51/52  one_sentence · repeats_context · formality
 
 Metrics
@@ -21,6 +23,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+from writing.content import TOPICS, check_nonsense, check_topic
 from writing.rules import LENGTH, check, check_spacing
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -35,6 +38,33 @@ TYPOS = [("됐다", "됬다"), ("되었다", "되엇다"), ("했다", "햇다"),
 
 def sentences(text):
     return re.split(r"(?<=다\.)\s+", text)
+
+
+def issues_for(rnd, number, question, text):
+    """All non-AI layers, as writing.check.run does."""
+    found = check(number, question, text)
+    if number in (53, 54):
+        found += check_spacing(text) + check_nonsense(text) + check_topic(rnd, number, text)
+    return found
+
+
+def inject_content(rnd, number, text, other):
+    """Errors for the written-style, character and content checks. other = another round's answer."""
+    for old, new in (("였다.", "였어."), ("었다.", "었어."), ("있다.", "있어."), ("이다.", "이야.")):
+        if old in text:
+            yield "spoken_ending", text.replace(old, new, 1), new
+            break
+    yield "no_ending", text + " 앞으로의 전망.", "앞으로의 전망."
+    s = sentences(text)
+    yield "characters", " ".join([s[0] + " ฉันชอบ"] + s[1:]), "ฉันชอบ"
+    yield "loose_jamo", " ".join([s[0] + " ㅋㅋ"] + s[1:]), "ㅋㅋ"
+    yield "repeated", text + " " + s[0], s[0][:20]
+    yield "not_korean", "This answer is mostly written in English, not Korean. " * 8 + s[0], "English"
+    yield "off_topic", other, "another round's answer"
+    # drop every sentence that mentions the last key item (Q53: outlook / cause, Q54: solutions)
+    words = [w.replace(" ", "") for w in TOPICS[rnd][str(number)][-1]["any"]]
+    kept = [x for x in re.split(r"(?<=[.?!])\s+", text) if not any(w in x.replace(" ", "") for w in words)]
+    yield "missing_item", " ".join(kept), "last key item removed"
 
 
 def inject_essay(number, text, question):
@@ -88,6 +118,7 @@ def inject_short(question, answer):
 
 def main():
     answers = json.loads(ANSWERS.read_text())
+    rounds = list(answers)
     detected, total = defaultdict(int), defaultdict(int)
     false_alarms, misses = [], []
     for rnd, model in answers.items():
@@ -96,15 +127,15 @@ def main():
         for number in (51, 52, 53, 54):
             question = qs[number]["text"]
             clean = model[str(number)]
-            issues = check(number, question, clean)
-            if number in (53, 54):
-                issues += check_spacing(clean)
+            issues = issues_for(rnd, number, question, clean)
             false_alarms += [{"round": rnd, "q": number, **i} for i in issues]
-            injected = inject_short(question, clean) if number in (51, 52) else inject_essay(number, clean, question)
+            if number in (51, 52):
+                injected = inject_short(question, clean)
+            else:
+                other = answers[rounds[(rounds.index(rnd) + 1) % len(rounds)]][str(number)]
+                injected = [*inject_essay(number, clean, question), *inject_content(rnd, number, clean, other)]
             for rule, broken, piece in injected:
-                found = check(number, question, broken)
-                if number in (53, 54):
-                    found += check_spacing(broken)
+                found = issues_for(rnd, number, question, broken)
                 total[rule] += 1
                 if any(i["rule"] == rule for i in found):
                     detected[rule] += 1

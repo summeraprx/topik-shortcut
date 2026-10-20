@@ -9,7 +9,8 @@ import os
 import secrets
 from pathlib import Path
 
-from fastapi import Depends, FastAPI, Header, HTTPException
+from fastapi import Cookie, Depends, FastAPI, Header, HTTPException
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -27,8 +28,10 @@ PHONE_KEY = os.environ.get("PHONE_KEY")
 ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"] + ([os.environ["EXTRA_ORIGIN"]] if os.environ.get("EXTRA_ORIGIN") else [])
 
 
-def require_key(x_key: str | None = Header(default=None)):
-    if PHONE_KEY and not (x_key and secrets.compare_digest(x_key, PHONE_KEY)):
+def require_key(x_key: str | None = Header(default=None), phone_key: str | None = Cookie(default=None)):
+    # header from fetch(); cookie for <img> requests (same host, so the browser sends it)
+    key = x_key or phone_key
+    if PHONE_KEY and not (key and secrets.compare_digest(key, PHONE_KEY)):
         raise HTTPException(401, "missing or wrong key")
 
 
@@ -72,6 +75,15 @@ def writing_prompts():
             out.append({"round": rnd, "number": number, "instruction": q["instruction"], "text": q["text"],
                         "limits": LENGTH.get(number)})
     return out
+
+
+@app.get("/writing/image/{rnd}/{number}")
+def writing_image(rnd: int, number: int):
+    """The whole question as printed (with its graph or picture), cropped by pipeline/export_web.py."""
+    path = ROOT / "data" / "web" / "writing" / f"{rnd}-{number}.png"
+    if rnd not in ROUNDS or number not in (51, 52, 53, 54) or not path.exists():
+        raise HTTPException(404, "no image")
+    return FileResponse(path, media_type="image/png")
 
 
 @app.post("/writing/check")

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Examples from "@/components/Examples";
-import { getGrammar, sourceLabel } from "@/lib/data";
+import { getGrammar } from "@/lib/data";
 import { isLang, pick, t } from "@/lib/i18n";
 
 export async function generateStaticParams() {
@@ -21,6 +20,24 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
+// "ปรากฏ 95 ครั้ง (TOPIK II PBT ครั้งที่ 91, 96, 102)"
+function appears(lang: string, count: number, rounds: number[]) {
+  const r = rounds.join(", ");
+  if (lang === "th") return `ปรากฏ ${count} ครั้ง (TOPIK II PBT ครั้งที่ ${r})`;
+  if (lang === "ko") return `${count}회 출제 (TOPIK II PBT 제${rounds.join("·")}회)`;
+  return `Appears ${count} times (TOPIK II PBT rounds ${r})`;
+}
+
+// "ออกสอบในพาร์ทอ่าน ข้อ 1–4: ครั้งที่ 102: Q4, ครั้งที่ 91: Q1"
+function inQ14(lang: string, ids: string[]) {
+  const refs = ids.map((id) => {
+    const [round, , q] = id.split("-");
+    return lang === "th" ? `ครั้งที่ ${round}: Q${q}` : lang === "ko" ? `제${round}회: ${q}번` : `round ${round}: Q${q}`;
+  });
+  const head = lang === "th" ? "ออกสอบในพาร์ทอ่าน ข้อ 1–4" : lang === "ko" ? "읽기 1~4번 출제" : "In Reading Q1–4";
+  return `${head}: ${refs.join(", ")}`;
+}
+
 export default async function GrammarDetail({ params }: PageProps<"/[lang]/grammar/[id]">) {
   const { lang, id } = await params;
   if (!isLang(lang)) notFound();
@@ -37,19 +54,17 @@ export default async function GrammarDetail({ params }: PageProps<"/[lang]/gramm
       <header>
         <h1 className="text-3xl font-bold">{g.name}</h1>
         <p className="mt-1 text-lg">{pick(g.meaning, lang)}</p>
-        <p className="mt-2 text-sm text-muted">
-          {g.count}{tr("times")} · {tr("round")} {g.rounds.join(", ")}
-          {g.in_q1_4.length > 0 && (
-            <span className="ml-2 rounded bg-warn-soft px-1.5 py-0.5 text-warn">
-              {tr("inQ14")}: {g.in_q1_4.map(sourceLabel).join(", ")}
-            </span>
-          )}
-        </p>
+        <p className="mt-2 text-sm text-muted">{appears(lang, g.count, g.rounds)}</p>
+        {g.in_q1_4.length > 0 && (
+          <p className="mt-2 inline-block rounded bg-warn-soft px-2 py-1 text-sm text-warn">{inQ14(lang, g.in_q1_4)}</p>
+        )}
       </header>
 
       {g.form[textLang] && (
         <Section title={tr("form")}>
-          <p className="whitespace-pre-line">{g.form[textLang]}</p>
+          <ul className="space-y-1">
+            {g.form[textLang]!.split(/\s*·\s*|\n/).filter(Boolean).map((use) => <li key={use}>{use}</li>)}
+          </ul>
         </Section>
       )}
 
@@ -82,15 +97,15 @@ export default async function GrammarDetail({ params }: PageProps<"/[lang]/gramm
               );
             })}
           </ul>
-          {g.note[textLang] && <p className="mt-3 whitespace-pre-line rounded-lg bg-bg p-3 text-sm">{g.note[textLang]}</p>}
+          {g.note[textLang] && (
+            <div className="mt-3 rounded-lg bg-bg p-3 text-sm">
+              <div className="mb-1 font-semibold">{tr("memoryTip")}</div>
+              <p className="whitespace-pre-line">{g.note[textLang]}</p>
+            </div>
+          )}
         </Section>
       )}
 
-      {g.examples.length > 0 && (
-        <Section title={`${tr("sameGrammar")} (${g.examples.length})`}>
-          <Examples items={g.examples.map((e) => ({ ...e, source: sourceLabel(e.source) }))} showAllLabel={tr("showAll")} />
-        </Section>
-      )}
 
       {g.similar.filter((s) => s.exam).map((s) => {
         const [, rnd, q] = s.exam!.match(/round (\d+) Q(\d+)/) ?? [];

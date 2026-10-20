@@ -18,7 +18,6 @@ ANALYSIS = PROCESSED / "analysis"
 CONTENT = ROOT / "content" / "grammar"
 OUT = ROOT / "data" / "web"
 ROUNDS = [102, 96, 91]
-VOCAB_TOP = 400
 
 
 def load(path):
@@ -39,8 +38,26 @@ def overview(questions):
     for r in rows:
         t = labels.get(r["instruction"], {})
         r["task"], r["words"] = t.get("task", {}), t.get("words", [])
+    # instruction groups as printed in the exam ([1~2], [3~4] …), identical in all analysed rounds
+    by_instruction = {r["instruction"]: r for r in rows}
+    groups = []
+    for q in questions:
+        if q["round"] != ROUNDS[0]:
+            continue
+        m = re.match(r"※ \[(\d+)~(\d+)\]", q["instruction"] or "")
+        lo, hi = (int(m.group(1)), int(m.group(2))) if m else (q["number"], q["number"])
+        name = re.sub(r"^※\s*\[[^\]]*\]\s*|\(각\s*\d+\s*점\)\s*$", "", q["instruction"]).strip() if m else str(q["number"])
+        if not any(g["lo"] == lo and g["section"] == q["section"] for g in groups):
+            t = by_instruction.get(name, {})
+            groups.append({"section": q["section"], "lo": lo, "hi": hi, "instruction": t.get("instruction", name),
+                           "task": t.get("task", {}), "words": t.get("words", [])})
+    keys = load(PROCESSED / "answer_keys.json")[str(ROUNDS[0])]
+    parts = {"listening": len(keys["listening"]), "reading": len(keys["reading"]),
+             "writing": sum(q["section"] == "writing" for q in questions if q["round"] == ROUNDS[0])}
     return {
         "rounds": ROUNDS,
+        "parts": parts,
+        "groups": groups,
         "counts": {"questions": len(questions),
                    "reading": sum(q["section"] == "reading" for q in questions),
                    "writing": sum(q["section"] == "writing" for q in questions),
@@ -82,9 +99,47 @@ def grammar():
 
 
 def vocab():
-    rows = load(ANALYSIS / "vocab.json")[:VOCAB_TOP]
-    return [{"lemma": r["lemma"], "pos": r["pos"], "count": r["count"], "rounds": r["rounds"],
-             "n_questions": r["n_questions"], "where": r["where"], "examples": r["examples"]} for r in rows]
+    """All words, most frequent first, with their meaning (content/vocab, EN/TH)."""
+    meanings = {}
+    for f in sorted((ROOT / "content" / "vocab").glob("meanings_*.json")):
+        meanings.update(load(f))
+    return [{"lemma": r["lemma"], "pos": r["pos"], "count": r["count"],
+             "meaning": dict(zip(("en", "th"), meanings.get(r["lemma"], ["", ""])))}
+            for r in load(ANALYSIS / "vocab.json")]
+
+
+def writing_images(questions):
+    """Crop each Writing question (with its graph / picture) from the exam PDF -> data/web/writing/<round>-<n>.png
+    Q53/54: the website shows the command as text, so the crop starts below the line ending in "(30점)"/"(50점)"."""
+    import io
+    import pymupdf
+    from PIL import Image
+    out_dir = OUT / "writing"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for q in questions:
+        if q["section"] != "writing":
+            continue
+        pdf_path = sorted((ROOT / "data" / "raw").glob(f"*{q['round']}회*듣기,쓰기*.pdf"))[0]
+        pdf = pymupdf.open(pdf_path)
+        parts = []
+        for k, (page, top, bottom) in enumerate(q["regions"]):
+            if k == 0 and q["number"] in (53, 54):
+                lines = load(ROOT / "data" / "ocr" / pdf_path.stem / f"page_{page:03d}.json")
+                ends = [l["y"] + l["h"] for l in lines
+                        if top - 0.01 <= l["y"] < bottom and re.search(r"\(\d+점\)", l["text"])]
+                if ends:
+                    top = min(ends) + 0.005
+            pg = pdf[page - 1]
+            W, H = pg.rect.width, pg.rect.height
+            pad = 0 if (k == 0 and q["number"] in (53, 54)) else 0.015
+            clip = pymupdf.Rect(0.08 * W, max(0, top - pad) * H, 0.92 * W, min(1, bottom + 0.015) * H)
+            parts.append(Image.open(io.BytesIO(pg.get_pixmap(dpi=150, clip=clip).tobytes("png"))).convert("RGB"))
+        img = Image.new("RGB", (max(p.width for p in parts), sum(p.height for p in parts)), "white")
+        y = 0
+        for part in parts:
+            img.paste(part, (0, y))
+            y += part.height
+        img.save(out_dir / f"{q['round']}-{q['number']}.png", optimize=True)
 
 
 def main():
@@ -94,6 +149,7 @@ def main():
              "questions.json": [{k: q[k] for k in ("round", "section", "number", "instruction", "shared_passage",
                                                    "text", "choices", "answer", "points", "passage_withheld")}
                                 for q in questions]}
+    writing_images(questions)
     for name, data in files.items():
         (OUT / name).write_text(json.dumps(data, ensure_ascii=False))
         print(f"{name:16} {len(data) if isinstance(data, list) else 'object'}")

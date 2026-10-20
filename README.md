@@ -12,7 +12,7 @@ An AI study tool for the Korean proficiency test **TOPIK II**, built from **real
 |---|---|
 | **Exam analysis** | 3 official exams (rounds 102, 96, 91) → question-type map, 2,506 words, 98 grammar points with real exam sentences |
 | **Ask TOPIK** (RAG) | Ask in Korean, English or Thai; answers come only from past exams and grammar cards, with a citation for every fact |
-| **Writing checker** | Q51–54: official rules (length, endings, title, copying…), spacing and spoken-style checks, AI spelling check |
+| **Writing checker** | Q51–54: official rules (length, written -다 endings, title, copying…), spacing and spoken-style checks, content checks (nonsense, off-topic, missing chart items), AI spelling check; 원고지 answer grid |
 | **Website** | Next.js, Korean / English / Thai interface, phone-friendly |
 
 Everything runs **on a laptop** (8 GB MacBook): no paid API, no data leaves the machine.
@@ -25,7 +25,7 @@ Everything runs **on a laptop** (8 GB MacBook): no paid API, no data leaves the 
 | Answer-key extraction | correct answers, round 102 listening (checked by hand) | **50 / 50** |
 | Ask TOPIK — retrieval | hit@5 on 1,070 generated queries (KO/EN/TH) | **99.8%** ² |
 | Ask TOPIK — answers | invalid citations | **0 / 21** |
-| Writing checker — rules | injected errors caught / false alarms on official answers | **64 / 64**, **0** ¹ |
+| Writing checker — rules + content | injected errors caught / false alarms on official answers | **111 / 112**, **0** ¹ |
 | Writing checker — AI | typos found / errors invented on clean essays | **5 / 6**, **0** |
 
 ¹ development set: rules were tuned on the same data. ² optimistic: template queries contain exact grammar names. Details below.
@@ -98,8 +98,10 @@ Error injection into the official model answers of rounds 102, 96, 91 (`eval/eva
 | Layer | Result |
 |---|---|
 | Length counter | matches the official counts (300 ✓, 288 ✓, 279 vs 280) |
-| Rules + language (12 error types) | **64 / 64** caught, **0** false alarms on 12 clean answers |
+| Rules + language + content (21 error types) | **111 / 112** caught, **0** false alarms on 12 clean answers |
 | AI (gemma4:e2b, JSON output) | typos **5 / 6** found, **0** invented; corrections right **3 / 5** |
+
+The first version only injected *one* error into *correct* answers, so it never tested nonsense: a manual test with a keyboard-mash answer got "no issues". The content layer (loose ㅁㄴㅇㄹ, non-Korean text, repeated sentences, every sentence ending in the written -다 style, key items of the question) and 9 new error types (incl. **another round's answer** as an off-topic test) came from that. The one miss is a test artefact (removing the "solution" sentences also removed the topic sentences → reported as off-topic). The content checks are shallow: they catch nonsense and off-topic answers, not weak arguments.
 
 ## Tech stack
 
@@ -137,9 +139,10 @@ Or start both with one command (this Mac only, Next.js telemetry off, Ctrl+C sto
 
 - 3 of 12 public rounds processed; older rounds need the answer-key layouts fixed.
 - Accuracy numbers marked ¹ are development scores; a held-out round (96) is the next test set.
-- Grammar and question-type explanations are written by Claude and **not yet reviewed** by a teacher; vocabulary translations are not done yet.
+- Grammar and question-type explanations, the 2,506 vocabulary translations and the writing topic items are written by Claude and **not yet reviewed** by a teacher.
 - Listening (audio + transcripts) and chart descriptions for Q53 are not included yet.
 - The local model is slow (15–60 s) and weak at corrections; the design allows switching to the Claude API.
+- The writing checker does not grade content quality yet (next: a stronger model, scored against the official criteria).
 
 ## Data and copyright
 

@@ -155,6 +155,9 @@ audit sheet image for human check.
 ## 12. Open items
 
 - **Before public launch:** owner reviews ALL content (grammar in `content/grammar/` and vocabulary), including the 8 grammar points looked at on 2026-10-20. Until then it is Claude-written and labelled as not yet reviewed. Priority: Thai wording and Rules.
+- Before public launch: also review the 2,506 vocabulary translations (`content/vocab/`) and the writing topic items (`content/writing/topics.json`), and move exam fragments out of git (topics.json key phrases, `writing/model_answers.py` short answers).
+- Writing checker: content quality is not graded yet ("no issues" ≠ good answer) → stronger model or training, scored against the official criteria; rework the "no issues" message.
+- 원고지 grid: digits should go two per cell (official rule 4); the counter already matches the official counts (one digit = one 자). Owner to decide.
 - Later (if time): round 96 as held-out **test set** for an honest accuracy number
 - Later (if time): `eval_extraction.py` option to evaluate the current pipeline output (not the review-time snapshot)
 - Later: describe Q53 / Q10 charts from page images

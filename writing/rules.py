@@ -2,10 +2,13 @@
 
 Rules come from the official guides (쓰기 답안 작성 방법, 원고지 사용법):
   51–52  one sentence · no words copied from around the ( ) · same formality as the text
+  51–54  only Korean, numbers, English letters and punctuation
   53–54  length in 원고지 cells (53: 200–300, 54: 600–700) · no -ㅂ/습니다 or -아/어요 endings ·
+         every sentence ends in the written -다 style (questions -는가 / -(으)ㄹ까 allowed) ·
          no spoken expressions · no title · no copying the question (54) · no bullet points
-Length = every character including spaces: matches the official counts "(288자)" and "(300자)"
-on the model answers of rounds 91 and 102 exactly.
+Length = every character including spaces (also the indent space the writer types at the start
+of a paragraph); matches the official counts "(288자)" and "(300자)" on the model answers of
+rounds 91 and 102 exactly. Each digit counts as one 자, as in those official counts.
 
 Every issue: {"rule", "layer", "en", "th", "excerpt"}  — messages are short, the excerpt shows where.
 """
@@ -26,6 +29,9 @@ SPOKEN = {
     ("저거", "NP"): "저것",
 }
 POLITE_END = re.compile(r"(습니다|ㅂ니다|니다|요|죠)$")
+# written (한다체) sentence endings; Kiwi writes ㄴ/ㄹ as final-consonant jamo (ᆫ, ᆯ)
+WRITTEN_END = {"다", "ㄴ다", "는다", "ㄴ가", "는가", "은가", "가", "ㄹ까", "을까", "자"}
+ALLOWED_CHARS = re.compile(r"[가-힣ㄱ-ㅎㅏ-ㅣA-Za-z0-9\s.,?!'\"‘’“”:;()~∼\-–―…·%/]")
 
 
 def kiwi():
@@ -39,9 +45,9 @@ def issue(rule, en, th, excerpt="", layer="rule"):
 
 
 def cells(text):
-    """Length as TOPIK counts it: every character incl. spaces; paragraph breaks and indents not counted
-    (matches the official "(288자)" / "(300자)" on the model answers exactly)."""
-    return sum(len(p.strip()) for p in text.strip().split("\n") if p.strip())
+    """Length as TOPIK counts it: every character incl. spaces and typed indents; line breaks and
+    spaces at the very end not counted (matches the official "(288자)" / "(300자)" exactly)."""
+    return len(text.rstrip().replace("\n", ""))
 
 
 def word_at(text, pos):
@@ -129,6 +135,37 @@ def check_short(question_text, marker, answer):
     return out + check_spoken(answer)
 
 
+def check_characters(text):
+    """Only Korean, numbers, English letters and punctuation belong in the 원고지."""
+    bad = sorted({c for c in text if not ALLOWED_CHARS.match(c)})
+    if not bad:
+        return []
+    return [issue("characters", "Use only Korean, numbers, English letters and punctuation.",
+                  "ใช้ได้เฉพาะภาษาเกาหลี ตัวเลข ตัวอักษรอังกฤษ และเครื่องหมายวรรคตอน", " ".join(bad[:8]))]
+
+
+def check_sentence_endings(text):
+    """Every sentence must end in the written style: -다 (했다, 한다, 것이다), or a written question
+    (-는가, -(으)ㄹ까). Polite endings are reported by their own rule, so they are skipped here."""
+    spoken, unfinished = [], []
+    for sent in kiwi().split_into_sents(text, return_tokens=True):
+        ef = [t for t in sent.tokens if t.tag == "EF"]
+        if not ef:
+            unfinished.append(sent.text)
+            continue
+        form = ef[-1].form.replace("ᆫ", "ㄴ").replace("ᆯ", "ㄹ")
+        if not POLITE_END.search(form) and form not in WRITTEN_END:
+            spoken.append(word_at(text, ef[-1].start))
+    out = []
+    if spoken:
+        out.append(issue("spoken_ending", "End every sentence in the written -다 style (했다, 한다, 것이다).",
+                         "ทุกประโยคต้องลงท้ายด้วยรูป -다 (ภาษาเขียน) เช่น 했다, 한다, 것이다", ", ".join(spoken[:3])))
+    if unfinished:
+        out.append(issue("no_ending", "Write full sentences that end in -다; this one has no ending.",
+                         "เขียนเป็นประโยคสมบูรณ์ที่ลงท้ายด้วย -다 ประโยคนี้ยังไม่มีคำลงท้าย", unfinished[0][:25]))
+    return out
+
+
 # ---------- 53–54: essays ----------
 
 def check_essay(number, question_text, answer):
@@ -157,7 +194,7 @@ def check_essay(number, question_text, answer):
         if length >= 20:
             out.append(issue("copied_question", "Do not copy the question; say it in your own words.",
                              "ห้ามลอกโจทย์ ให้เรียบเรียงด้วยคำของตัวเอง", copied[:40]))
-    return out + check_spoken(answer)
+    return out + check_sentence_endings(answer) + check_characters(answer) + check_spoken(answer)
 
 
 def check(number, question_text, answer):
@@ -165,7 +202,7 @@ def check(number, question_text, answer):
     if number in (51, 52):
         out = []
         for marker, text in answer.items():
-            for i in check_short(question_text, marker, text):
+            for i in check_short(question_text, marker, text) + check_characters(text):
                 out.append({**i, "blank": marker})
         return out
     return check_essay(number, question_text, answer)

@@ -22,8 +22,12 @@ export type QuestionType = {
   words: [string, string, string][];
 };
 
+export type Group = { section: "reading" | "writing"; lo: number; hi: number; instruction: string; task: Text; words: [string, string, string][] };
+
 export type Overview = {
   rounds: number[];
+  parts: { listening: number; reading: number; writing: number };
+  groups: Group[];
   counts: { questions: number; reading: number; writing: number; words: number; grammar: number };
   question_types: QuestionType[];
   answer_distribution: Record<string, Record<string, Record<string, number>>>;
@@ -52,10 +56,7 @@ export type Word = {
   lemma: string;
   pos: string[];
   count: number;
-  rounds: number[];
-  n_questions: number;
-  where: Record<string, number>;
-  examples: Example[];
+  meaning: Text;
 };
 
 export const getOverview = () => load<Overview>("overview.json");

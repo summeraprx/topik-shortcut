@@ -2,7 +2,8 @@
 
   1. rules     official TOPIK rules (length, endings, title, copying, one sentence, formality…)
   2. language  spacing (clear errors only) and spoken expressions
-  3. ai        spelling / grammar, local model; shown as "possible" errors (it finds well, fixes less well)
+  3. content   nonsense (loose ㅁㄴㅇㄹ, not Korean, repeated sentences) and topic (key items missing)
+  4. ai        spelling / grammar, local model; shown as "possible" errors (it finds well, fixes less well)
 
 Run:  .venv/bin/python -m writing.check 102 54 my_answer.txt          (53/54: text file)
       .venv/bin/python -m writing.check 102 51 "㉠ (removed)" "㉡ (removed)"
@@ -13,10 +14,11 @@ import re
 import sys
 from pathlib import Path
 
+from writing.content import check_nonsense, check_topic
 from writing.rules import cells, check, check_spacing
 
 ROOT = Path(__file__).resolve().parent.parent
-LAYER_TITLE = {"rule": "Official rules", "language": "Language", "ai": "AI (possible errors)"}
+LAYER_TITLE = {"rule": "Official rules", "language": "Language", "content": "Content", "ai": "AI (possible errors)"}
 
 
 def question(rnd, number):
@@ -28,7 +30,7 @@ def run(rnd, number, answer, use_ai=True):
     q = question(rnd, number)
     issues = check(number, q["text"], answer)
     if number in (53, 54):
-        issues += check_spacing(answer)
+        issues += check_spacing(answer) + check_nonsense(answer) + check_topic(rnd, number, answer)
         if use_ai:
             from writing.ai import find_errors
             # guard: the model sometimes "corrects" into -ㅂ/습니다 / -요, which the TOPIK rules forbid in 53/54
@@ -48,7 +50,7 @@ def main(args):
     issues = run(rnd, number, answer, use_ai)
     if not issues:
         print("No issues found. / ไม่พบข้อผิดพลาด")
-    for layer in ("rule", "language", "ai"):
+    for layer in ("rule", "language", "content", "ai"):
         found = [i for i in issues if i["layer"] == layer]
         if found:
             print(f"== {LAYER_TITLE[layer]} ({len(found)})")

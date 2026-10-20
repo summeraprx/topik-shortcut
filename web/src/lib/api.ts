@@ -24,7 +24,8 @@ export async function post<T>(path: string, body: unknown): Promise<T> {
   return r.json() as Promise<T>;
 }
 
-// Same rule as writing/rules.py: every character incl. spaces; paragraph breaks are not counted.
+// Same rule as writing/rules.py: every character incl. spaces (also the indent space typed at the
+// start of a paragraph); line breaks and spaces at the very end are not counted.
 export function cells(text: string) {
-  return text.trim().split("\n").reduce((n, p) => n + p.trim().length, 0);
+  return text.trimEnd().replace(/\n/g, "").length;
 }

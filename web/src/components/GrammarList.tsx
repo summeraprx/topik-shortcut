@@ -45,7 +45,6 @@ export default function GrammarList({ items, lang }: { items: Item[]; lang: Lang
               </div>
               <div className="shrink-0 text-right text-xs">
                 <div className="tabular-nums">{g.count}{tr("times")}</div>
-                {g.in_q1_4.length > 0 && <div className="mt-1 rounded bg-warn-soft px-1.5 py-0.5 text-warn">{tr("inQ14")}</div>}
               </div>
             </Link>
           </li>

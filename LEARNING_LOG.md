@@ -26,3 +26,11 @@
 - Kiwi's spacing model flagged 11 "errors" in a correct official answer (compound nouns and numbers, where spacing is optional) → only report *clear* errors (after a particle/ending; before a dependent piece).
 - **Structured output** (JSON schema in Ollama) makes model answers machine-checkable; the "original must appear in the answer" check is the writing version of the RAG citation check.
 - Small models **find** errors better than they **fix** them (5/6 found, 3/5 fixes right) → show AI items as "possible error here", and **guard** them with the rules (a fix into -합니다 was dropped).
+
+## 2026-10-20 — Testing with nonsense (writing checker)
+
+- My eval only put **one error into correct answers**, so it never asked "what happens with a bad answer?". The owner typed nonsense and got "no issues". A checker that only looks for known mistakes passes anything that has none of them.
+- Fix = test the **whole input space**: nonsense, wrong language, repeated text, and **another round's real answer** (perfect Korean, wrong topic) as off-topic tests. 21 error types, 111/112 caught, still 0 false alarms on the official answers.
+- Cue words for Q54 gave false alarms on the official answers (good writers say "도움이 된다", not "장점") → widened the cue words, and the false-alarm check on clean answers caught it before it shipped.
+- A missing **main topic** must count as off-topic: any essay contains general words like 문제 / 해결.
+- Read the official source before building: 원고지 rule 4 says digits go two per cell, but the official counts (288자 / 300자) count each digit as one.
